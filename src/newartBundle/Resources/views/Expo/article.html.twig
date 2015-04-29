@@ -1,0 +1,123 @@
+{# header #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+{# Nav-Left #}
+{{ include("newartBundle:Expo:nav.html.twig") }}
+{# END Nav-Left #}
+
+<div class="container-fluid header_article">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1 books">
+
+                <h1 class="text-center">{{ 'New Art Expo\n'|nl2br }}<span class="titlestyle">{{ 'evênement' |upper }}</span></h1>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-4 col-lg-7 col-lg-offset-5 col-sm-8 col-sm-offset-4">
+                            <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                <li><a href="#" target="_blank"><span class="fa fa-twitter"></span></a>
+                                </li>
+                            </ul>
+                            <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                <li><a href="#" target="_blank"><span class="fa fa-facebook"></span></a>
+                                </li>
+                            </ul>
+                            <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                <li><a href="#" target="_blank"><span class="fa fa-instagram"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-2 article_content">
+            <h2>Jean-Marie Apriou, Les Modules</h2>
+            <h3>Fondation Pierre Bergé – Yves Saint Laurent</h3>
+            <h4>Sonde d’arc-en-taupe</h4>
+
+            <p class="text-justify">Les expérimentations de Jean-Marie Appriou dans le domaine de
+                la céramique et de la fonte résultent d'un rapport technique singulier à la matière,
+                rehaussé par un enchevêtrement de références culturelles (préraphaélites, musiques pop,
+                artisanat, patinage artistique, mythologies médiévales, bande dessinée, etc.).
+            </p>
+
+            <p class="text-justify">Jean-Marie Appriou a conçu pour le Palais de Tokyo un parcours crépusculaire
+                évoquant à la fois le plan basilical, la salle de concert, la grotte et le reliquaire. L’exposition
+                est structurée par des assemblages en fonte composés d’éléments conçus dans l’atelier de l’artiste
+                (coquillages, cristaux, tours de potier et personnages). À la fois sculptures et bas-reliefs, ces
+                grilles reconfigurent l'espace au gré des jeux de transparence, de clair-obscur et de saturation.
+                Cet ensemble constitue une cosmologie personnelle élaborée par l’artiste, symbolisant le cycle des
+                transformations naturelles et manufacturées de la matière. Le parcours évoque les états successifs
+                du calcaire, depuis la sédimentation des coquillages au fond des océans jusqu’à la formation des stalactites.
+                Il décrit également les métamorphoses de l’argile : l'extraction marécageuse, le façonnage, la cuisson.
+                Cette approche tellurique et quasiment alchimique est soulignée par la dimension hermétique du titre de
+                l’exposition : « Sonde d’arc-en-taupe » évoque deux motifs complémentaires, la galerie de la taupe et l’arc-en-ciel,
+                formant un anneau qui réunit le cosmos et le monde chthonien, les étoiles et l’underground.
+            </p>
+
+            <h4>Les Modules - Fondation Pierre Bergé - Yves Saint Laurent</h4>
+
+            <p class="text-justify"><em>Depuis son ouverture en septembre 2006, le programme des Modules est devenu un formidable outil
+                d’expérimentation et de promotion des jeunes artistes et de la création émergente française, grâce notamment au soutien
+                de la Fondation Pierre Bergé - Yves Saint Laurent depuis 2010. Ils ont lieu dans les espaces publics. Petites et grandes
+                salles, corridors, parcours secrets sont le théâtre d’expositions de petit format, d’interventions et d’expériences
+                audacieuses. Pour augmenter leur rayonnement, le Palais de Tokyo n’hésite pas à les faire voyager à l’occasion de grandes
+                manifestaions.</em>
+            </p>
+
+        </div>
+
+        <div class="col-md-3 dernieresphotos">
+            <h2>{{ 'quelques photos'|upper }}</h2>
+            <img src="{{ asset('bundles/admin/images/articles/1.jpg') }}" alt="Image News 1" class="img-responsive">
+            <img src="{{ asset('bundles/admin/images/articles/2.jpg') }}" alt="Image News 1" class="img-responsive">
+            <img src="{{ asset('bundles/admin/images/articles/3.jpg') }}" alt="Image News 1" class="img-responsive">
+            <img src="{{ asset('bundles/admin/images/articles/4.jpg') }}" alt="Image News 1" class="img-responsive">
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-2 otherarticle">
+
+            <h2>{{ 'Vous allez aimer ces articles'|upper }}</h2>
+
+            <div class="row">
+
+            <div class="col-md-6">
+                <p class="date">28 novembre 2014</p>
+                <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                    les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+            </div>
+
+            <div class="col-md-6">
+                <p class="date">28 novembre 2014</p>
+                <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                    les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{# footer #}
+
+{{ include("newartBundle:Expo:footer.html.twig") }}

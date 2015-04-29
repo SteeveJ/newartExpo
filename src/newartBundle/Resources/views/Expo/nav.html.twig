@@ -1,0 +1,106 @@
+{#{{ dump(app) }}#}
+<header>
+    {# Nav-left desktop #}
+    <div class="menu menu-desktop hidden-xs">
+        <div class="box-nav-top">
+            <a class="ico-nav-phone" ><img class="ico-nav" src="{{ asset('bundles/admin/images/icons/menu.png') }}"></a>
+            <a href="{{ path('newart') }}"><img class="ico-nav nav-logo" src="{{ asset('bundles/admin/images/logo.png') }}"></a>
+        </div>
+        <ul class="nav-left">
+            <div id="box-nav">
+                <li id="about">
+                    <a href="{{ path('nae_plateform_nae') }}">
+                        QU'EST CE QUE NAE ?
+                    </a>
+                </li>
+                <li id="find">
+                    <a>
+                        RECHERCHE
+                    </a>
+                </li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li id="profil">
+
+                    <a href="{{ path('nae_plateform_profil', { 'id': app.user.id }) }}">
+                        MON PROFIL
+                    </a>
+                </li>
+                {% endif %}
+                <li id="books">
+                    <a href="{{ path('nae_plateform_books') }}">
+                        LISTE DES BOOKS
+                    </a>
+                </li>
+                <li id="expo">
+                    <a href="{{ path('nae_plateform_expo') }}">
+                        EXPO VIRTUELLE
+                    </a>
+                </li>
+                <li id="shop">
+                    <a>
+                        LA BOUTIQUE
+                    </a>
+                </li>
+                <li id="contact">
+                    <a href="{{ path('nae_plateform_contact') }}">
+                        CONTACT
+                    </a>
+                </li>
+            </div>
+            <div id="box-nav-bottom" class="hidden-xs">
+                <li id="share">
+                    <a>
+                        PARTAGER
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="menu click-nav menu-phone visible-xs">
+        <ul class="no-js">
+            <li>
+                <a class="ico-nav-phone clicker" ><img class="ico-nav" src="{{ asset('bundles/admin/images/icons/menu.png') }}"></a>
+                <ul>
+                    <li id="about">
+                        <a>
+                            QU'EST CE QUE NAE ?
+                        </a>
+                    </li>
+                    <li id="find">
+                        <a>
+                            RECHERCHE
+                        </a>
+                    </li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li id="profil">
+                        <a href="{{ path('nae_plateform_profil', { 'id': app.user.id }) }}">
+                            MON PROFIL
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li id="books">
+                        <a>
+                            LISTE DES BOOKS
+                        </a>
+                    </li>
+                    <li id="expo">
+                        <a>
+                            EXPO VIRTUELLE
+                        </a>
+                    </li>
+                    <li id="shop">
+                        <a>
+                            LA BOUTIQUE
+                        </a>
+                    </li>
+                    <li id="contact">
+                        <a>
+                            CONTACT
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}NewArtExpo{% endblock %}</title>
+
+    {% block stylesheets %}
+        {# On charge le CSS de bootstrap depuis le site directement #}
+        <link rel="stylesheet" href="{{ asset('bundles/admin/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/admin/css/style.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/css/component.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/css/fonts.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/admin/css/left-menu.css') }}" type="text/css"/>
+
+
+
+
+        {# Link ico temporaire #}
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    {% endblock %}
+    <script src="{{ asset('bundles/admin/js/hover.zoom.js') }}"></script>
+    <script src="{{ asset('bundles/admin/js/hover.zoom.conf.js') }}"></script>
+
+    <script src="{{ asset('bundles/admin/js/jquery.superslides.min.js') }}"></script>
+
+    <script src="{{ asset('bundles/admin/js/modernizr.custom.js')}}"></script>
+    <script src="{{ asset('bundles/admin/js/toggle-nav.js')}}"></script>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>

@@ -1,0 +1,401 @@
+{# src/NAE/PlatformBundle/Resources/views/Expo/index.html.twig #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+{# Header : Nav / Slider #}
+{# Nav-Left #}
+
+{{ include("newartBundle:Expo:nav.html.twig") }}
+    {# END Nav-Left #}
+    {# Slider #}
+    <div class="logo"></div>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <div class="inscription"><a href="{{ path('fos_user_profile_show') }}">Profile</a></div>
+{% else %}
+    <div class="inscription"><a href="{{ path('fos_user_security_login') }}">Se connecter</a> / <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a></div>
+{% endif %}
+<div class="col-md-11 col-md-offset-1 slider">
+        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+                <div class="carousel-inner">
+                    <div class="active item item-1">
+                        <div class="motif"></div>
+                        <img src="{{ asset('bundles/admin/images/slider/image1.png') }}" alt="image_slider_1">
+                        <div class="carousel-caption">
+                            <h1>Tomi Slapette</h1>
+                            <button type="button" class="btn btn-default">{{ 'decouvir l\'artiste'|upper }}</button>
+                        </div>
+                    </div>
+                    <div class="item item-2">
+                        <div class="motif"></div>
+                        <img src="{{ asset('bundles/admin/images/slider/image2.jpg') }}" alt="image_slider_2">
+                        <div class="carousel-caption">
+                            <h1>Tomi Slapette</h1>
+                            <button type="button" class="btn btn-default">{{ 'decouvir l\'artiste'|upper }}</button>
+                        </div>
+                    </div>
+                    <div class="item item-3">
+                        <div class="motif"></div>
+                        <img src="{{ asset('bundles/admin/images/slider/image3.jpg') }}" alt="image_slider_3">
+                        <div class="carousel-caption">
+                            <h1>Tomi Slapette</h1>
+                            <button type="button" class="btn btn-default">{{ 'decouvir l\'artiste'|upper }}</button>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+</div>
+{# Pop-UP #}
+<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content">
+
+            <div class="row onglet">
+                <div class="col-md-6">
+                   <p class="text-center"><a href="#connexion" aria-controls="connexion" role="tab" data-toggle="tab">Se connecter</a></p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center"><a href="#inscription" aria-controls="inscription" role="tab" data-toggle="tab">S'inscrire</a></p>
+                </div>
+            </div>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="connexion">
+                <h3>Connexion</h3>
+                <div class="row">
+                    <div>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputPseudo"></label>
+                                <input type="text" class="form-control" id="exampleInputPseudo" placeholder="Pseudo">
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputPasswod"></label>
+                                <input type="password" class="form-control" id="exampleInputPseudo" placeholder="Mot de passe">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <button type="button" class="btn btn-default md-close btnSend center-block">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+
+    <div role="tabpanel" class="tab-pane" id="inscription">
+        <h3>Inscription</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputName"></label>
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="Nom">
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputLastName"></label>
+                        <input type="text" class="form-control" id="exampleInputLastName" placeholder="Prenom">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputBirthDate"></label>
+                        <input type="text" class="form-control" id="exampleInputBirthDate" placeholder="Date de naissance JJ/MM/AAAA">
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputPays"></label>
+                        <input type="text" class="form-control" id="exampleInputPays" placeholder="Pays">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputPseudo"></label>
+                        <input type="text" class="form-control" id="exampleInputPseudo" placeholder="Pseudo">
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputMail"></label>
+                        <input type="mail" class="form-control" id="exampleInputPays" placeholder="Adresse Email">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputPasswod"></label>
+                        <input type="password" class="form-control" id="exampleInputPseudo" placeholder="Mot de passe">
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputConfirmPassword"></label>
+                        <input type="email" class="form-control" id="exampleConfirmPassword" placeholder="Confirmer le mot de passe">
+                    </div>
+                </form>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" class="cvg pull-right">
+                    <p class="left">Je déclare avoir lu et accepté les conditions générales du site</p>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <button type="button" class="btn btn-default md-close btnSend center-block">S'inscrire   </button>
+            </div>
+        </div>
+
+            </div>{# End Onglet #}
+        </div>
+
+    </div>
+</div> {# End Pop-Up #}
+
+<div class="md-overlay"></div><!-- the overlay element -->
+    {# END Slider #}
+    {# Nav-Horizontal#}
+    <div class="row nav-horizontal">
+            <div class="col-md-4 col-sm-4  navexpovirtuel hidden-xs">
+                <a href="#">
+                    <img src="{{ asset('bundles/admin/images/icons/expovirtuelle.png') }}">
+                    <h4 class="grey">{{ 'expo virtuel'|upper }}</h4>
+                </a>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-6 navboutique">
+                <a href="#">
+                    <img src="{{ asset('bundles/admin/images/icons/laboutique.png') }}">
+                    <h4 class="grey">{{ 'boutique vente'|upper }}</h4>
+                </a>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-6 navcoupcoeur">
+                <a href="#">
+                    <img src="{{ asset('bundles/admin/images/icons/coeur.png') }}">
+                    <h4 class="grey">{{ 'coup de coeur'|upper }}</h4>
+                </a>
+        </div>
+    </div>
+    {# END Nav-Horizontal #}
+    {# End Header : Nav / Slider #}
+
+    {# What is NAE #}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                <div class="presnae">
+                    <h1 class="text-center">{{ 'Qu\'est ce que\n'|nl2br }}<span class="titlestyle"> {{ 'new art expo'|upper }}</span></h1>
+                    <div class="row col-md-6 col-md-offset-3">
+                        <div class="barre center-block"></div>
+                    </div>
+                    <div class="row col-md-8 col-md-offset-2 pres-NAE-Home">
+                        <p class="content text-center">NewArtExpo est un site communautaire d'artistes plasticiens plasiticens, et permet d'exposer l'ensemble de leurs travaux sur leurs propres espaces.</p>
+                        <p class="content text-center">NAE permet aux artistes de disposer d'un book performant et gratuit tout en se délestant de la partie de création du site</p>
+                        <p class="undercontent text-center">Nous permettons ainsi à nos artistes d'établir un curriculum vitae artistique disponible à tout moment de leurs parcours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# End What is NAE #}
+    {# Parallax #}
+    <div class="col-md-12 savoirplus parallax row">
+            <a href="#"><button type="button" class="btn btn-default center-block">En savoir +</button></a>
+    </div>
+    {# End Parallax #}
+    {# News #}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                <div class="news">
+                    <h1 class="text-center">{{ 'Nos dernières\n'|nl2br }}<span class="titlestyle">{{ 'news'|upper }}</span></h1>
+
+                    <div class="row col-md-6 col-md-offset-3">
+                        <div class="barre center-block"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row newsarticle hidden-xs">
+            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
+                <p>28/10/2014</p>
+                <h2>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h2>
+                <img src="{{ asset('bundles/admin/images/news/image1.jpg') }}" alt="Image News 1" class="img-responsive imgactu">
+                <a href="#">Lire Plus</a>
+            </div>
+            <div class="col-md-1 col-sm-1 date-separator">
+                <h4 class="text-center">{{ "now"|date("m/Y") }}</h4>
+                <span class="trait-separator"></span>
+            </div>
+            <div class="col-md-5 col-sm-5 article-suite">
+                <p>28/10/2014</p>
+                <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive imgactu">
+                <a href="#">Lire Plus</a>
+            </div>
+            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 article-news-3">
+                <p>28/10/2014</p>
+                <h2>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h2>
+                <img src="{{ asset('bundles/admin/images/news/image3.jpg') }}" alt="Image News 1" class="img-responsive imgactu">
+                <a href="#">Lire Plus</a>
+            </div>
+            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 last-article-news">
+                <p>11/02/2014</p>
+                <h3>Bientôt ! Un évenement signée NAE</h3>
+                <img src="{{ asset('bundles/admin/images/news/image4.jpg') }}" alt="Image News 3" class="img-responsive imgactu">
+                <a href="#">Lire Plus</a>
+            </div>
+    </div>
+    <div class="row newsarticle visible-xs">
+        <div class="col-md-1 col-sm-1 date-separator">
+            <h4 class="text-center">{{ "now"|date("m/Y") }}</h4>
+            <span class="trait-separator"></span>
+        </div>
+        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
+            <p>28/10/2014</p>
+            <h2>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h2>
+            <img src="{{ asset('bundles/admin/images/news/image1.jpg') }}" alt="Image News 1" class="img-responsive">
+            <a href="#">Lire Plus</a>
+        </div>
+        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 article-news-3">
+            <p>28/10/2014</p>
+            <h2>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h2>
+            <img src="{{ asset('bundles/admin/images/news/image3.jpg') }}" alt="Image News 1" class="img-responsive">
+            <a href="#">Lire Plus</a>
+        </div>
+        <div class="col-md-5 col-sm-5 article-suite">
+            <p>28/10/2014</p>
+            <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+            <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive">
+            <a href="#">Lire Plus</a>
+        </div>
+        <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 last-article-news">
+            <p>11/02/2014</p>
+            <h3>Bientôt ! Un évenement signée NAE</h3>
+            <img src="{{ asset('bundles/admin/images/news/image4.jpg') }}" alt="Image News 3" class="img-responsive">
+            <a href="#">Lire Plus</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1 newsbutton">
+                <p class="text-center"><a href="href="{{ path('nae_plateform_articles') }}"><button type="button" class="btn btn-default buttonred">Lire tous les billets</button></a><p>
+            </div>
+        </div>
+    </div>
+    {# End News #}
+
+
+    {# Artiste / Oeuvre du jour #}
+    <div class="row artisteandoeuvre">
+        <h1 class="text-center">{{ 'Aujourd\'hui'|upper }}</h1>
+        <div class="barre center-block"></div>
+        <p class="text-center intro-artisteandoeuvre">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="col-md-6 col-sm-6 artiste">
+            <h4>{{ 'Artiste du jour'|upper }}</h4>
+            <h2>Pascal Cherchiario</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="col-md-6 col-sm-6 oeuvredujour">
+            <h4>{{ 'Oeuvre du jour'|upper }}</h4>
+            <h2>Romuald Merceaux</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+
+    {# End Artiste / Oeuvre du jour #}
+
+
+    {# Newsletter #}
+        <div class="row newsletter">
+            <div class="col-md-11 col-md-offset-1">
+                <div class="news">
+                    <h1 class="text-center">{{ 'S\'inscrire à la\n'|nl2br }}<span class="titlestyle">{{ 'Newsletter'|upper }}</span></h1>
+
+                        <div class="barre center-block">
+                    </div>
+                </div>
+            </div>
+            <div class="row newsletter">
+                <p class="text-center">Pour suivre notre actualité, recevoir des nouveautés exclusives, etc.
+                    Veuillez-vous abonner à la newsletter New Art Expo.
+                </p>
+                <div class="col-md-6 col-md-offset-5 col-sm-6 col-sm-offset-4 col-xs-12 ">
+                    <input type="text" class="col-md-4 col-xs-6" placeholder="{{ 'Adresse mail'|upper }}"/>
+                    <span>
+                         <a href="#">
+                             <button type="button" class="btn btn-default newsletterbutton text-center col-md-3">{{ 'je m\'abonne !'|upper }}</button>
+                         </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        $(function () {
+            $('.click-nav > ul').toggleClass('no-js js');
+            $('.click-nav .js ul').hide();
+            $('.click-nav .js').click(function(e) {
+                $('.click-nav .js ul').slideToggle(200);
+                $('.clicker').toggleClass('active');
+                e.stopPropagation();
+            });
+            $(document).click(function() {
+                if ($('.click-nav .js ul').is(':visible')) {
+                    $('.click-nav .js ul', this).slideUp();
+                    $('.clicker').removeClass('active');
+                }
+            });
+        });
+    </script>
+
+{{ include("newartBundle:Expo:footer.html.twig") }}

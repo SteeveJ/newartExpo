@@ -1,0 +1,106 @@
+{# Include #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+
+{# Nav-Left #}
+{{ include("newartBundle:Expo:nav.html.twig") }}
+{# END Nav-Left #}
+
+{# Title & Search fields#}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1 books">
+            <h1 class="text-center">{{ 'New Art Expo\n'|nl2br }}<span class="titlestyle">{{ 'Tous les articles' |upper }}</span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="searchbooks">
+                <form>
+                    <input id="recherche" type="text" placeholder="Effectuer une recherche" required>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1 iconloupe">
+            <form>
+                <input type="image" src="{{ asset('bundles/admin/images/icons/loupe.png') }}" alt="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{# End Title & Search fields#}
+
+        {# Filtre latéral #}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1 filtre">
+            <p class="left">Filtrer par</p>
+
+            <div class="dropdown dropdown2 deroulant">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    Dates
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">2014</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">2013</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">2012</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">2011</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Articles #}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 col-md-offset-3 articles">
+
+            <div class="row columnarticles">
+                <div class="col-md-6 article1">
+                    <p class="date">28 novembre 2014</p>
+                    <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                    <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                        les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+                    <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive imgactu">
+                </div>
+
+                <div class="col-md-6">
+                    <p class="date">28 novembre 2014</p>
+                    <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                    <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                        les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+                    <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive">
+                </div>
+            </div>
+
+            <div class="row columnarticles">
+                <div class="col-md-6 articles-solo">
+                    <p class="date">28 novembre 2014</p>
+                    <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                    <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                        les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+                    <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive">
+                </div>
+
+                <div class="col-md-6 articles-solo">
+                    <p class="date">28 novembre 2014</p>
+                    <h3>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h3>
+                    <p>Nous avons le plaisir de vous inviter à la soirée “Été d’Amour” ce mardi. Nous serons ravis de vous accueillir afin de vous présenter
+                        les nouveaux artistes autour d'un verre et d'une performance artistique unique.</p>
+                    <img src="{{ asset('bundles/admin/images/news/image2.jpg') }}" alt="Image News 1" class="img-responsive">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{# footer #}
+{{ include("newartBundle:Expo:footer.html.twig") }}
+
+

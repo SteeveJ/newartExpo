@@ -1,0 +1,23 @@
+post:
+    path:     /
+    defaults: { _controller: "AdminBundle:Post:index" }
+    methods:  [GET, POST]
+
+post_show:
+    path:     /{id}/showPost
+    defaults: { _controller: "AdminBundle:Post:show" }
+
+post_create:
+    path:     /createPost
+    defaults: { _controller: "AdminBundle:Post:create" }
+    methods:  [GET, POST]
+
+post_update:
+    path:     /{id}/updatePost
+    defaults: { _controller: "AdminBundle:Post:update" }
+    methods:  [GET, PUT]
+
+post_delete:
+    path:     /{id}/deletePost
+    defaults: { _controller: "AdminBundle:Post:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,200 @@
+{# header #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+
+{# Nav-Left #}
+{{ include("newartBundle:Expo:nav.html.twig") }}
+{# END Nav-Left #}
+
+<div class="container-fluid profile">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-11 col-md-offset-1">
+                {# artist    image #}
+                <img src="" alt="André Le Corre" class="img-circle img-responsive center-block">
+                {# artist name #}
+                <h1 class="name text-center"> {{ user.firstname }} {{ user.lastname }}</h1>
+                {% if user.blaze != null %}
+                    <h2 class="surname text-center">{{ user.blaze }}</h2>
+                {% endif %}
+                <div class="contactProfile">
+                    {# location #}
+                    <p class="text-center"><span class="fa fa-map-marker"></span>{{ user.country }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-11 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-4 col-lg-7 col-lg-offset-5 col-sm-8 col-sm-offset-4">
+                            {% if user.twitter != null %}
+                                <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                    <li><a href="{{ user.twitter }}" target="_blank"><span class="fa fa-twitter"></span></a>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                            {% if user.facebook != null %}
+                                <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                    <li><a href="{{ user.facebook }}" target="_blank"><span class="fa fa-facebook"></span></a>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                            {% if user.instagram != null %}
+                                <ul class="list-inline social-buttons text-center col-lg-1 col-md-1 col-sm-2 col-xs-4">
+                                    <li><a href="{{ user.instagram }}" target="_blank"><span class="fa fa-instagram"></span></a>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="container col-md-11 col-md-offset-1">
+    {# Section Biography #}
+    <section id="biography" class="containerProfile">
+
+        <h1 class="text-center"><span class="titlestyle">{{ 'Biographie'|upper }}</span></h1>
+        <div class="barre center-block"></div>
+        <div class="left">
+            {{ user.biography|raw }}
+        </div>
+
+    </section>
+</div>
+{# section last work #}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+            <div id="lastwork" class="containerProfile">
+                <h5 class="profileTitleOeuvre">{{ 'dernieres oeuvres ' | upper }}</h5>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="" alt="" class="img-responsive img-recent"/>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="" alt="" class="img-responsive img-recent"/>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="" alt="" class="img-responsive img-recent"/>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="" alt="" class="img-responsive img-recent"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+            <div class="containerProfile">
+                <div class="borderactus"></div>
+                <h5 class="actusTitle">{{ 'Actualités :' | upper }}</h5>
+                <div class="row">
+                    {% for post in posts|slice(0, 2)  %}
+                    <div class="col-md-6">
+                        <p class="actualityText dateProfile">{{ post.updatedAt|date('d.m.Y') }}</p>
+                        <h5 class="subtitleTextActuality">&quot; {{ post.title }} &quot;</h5>
+                        <div class="actualityText">
+                            {{ post.text|truncate(50)|raw }}
+                        </div>
+                        <a class="actualityLien" href="{{ path('post_show', { 'id': post.id }) }}">Voir +</a>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="borderactus"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+            <div class="containerProfile portofolio">
+                <h1 class="text-center">{{ 'El Cor\n'|nl2br }}<span class="titlestyle"> {{ 'portofolio'|upper }}</span></h1>
+                <div class="barre center-block"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="grilleportofolio">
+            <div id="grid-gallery" class="grid-gallery">
+                <section class="grid-wrap">
+                    <ul class="grid">
+                        <li class="grid-sizer"></li><!-- for Masonry column width -->
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-1.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-2.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-3.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+                    </ul>
+                </section><!-- // grid-wrap -->
+                <section class="slideshow">
+                    <ul>
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-1.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-2.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="{{ asset('bundles/admin/images/gallery-profile/image-2.jpg') }}" alt="" class="image-portofolio img-responsive">
+                            </figure>
+                        </li>
+
+                    </ul>
+                    <nav>
+                        <span class="fa-backward icon nav-prev"></span>
+                        <span class="icon nav-next"></span>
+                        <span class="icon nav-close"></span>
+                    </nav>
+                    <div class="info-keys icon">Navigation avec les touches de direction</div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1 newsbutton">
+            <p class="text-center"><a href="#"><button type="button" class="btn btn-default buttonred">Charger plus d'oeuvres</button></a><p>
+        </div>
+    </div>
+</div>
+
+{# footer #}
+{{ include("newartBundle:Expo:footer.html.twig") }}

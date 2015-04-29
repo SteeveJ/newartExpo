@@ -1,0 +1,20 @@
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+{{ include("newartBundle:Expo:nav.html.twig") }}
+<div class="row">
+    <div class="col-md-offset-1 col-sm-offset-2">
+        <h1>Articles edit</h1>
+
+        {{ form(edit_form) }}
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('articles') }}">
+                    Back to the list
+                </a>
+            </li>
+            <li>{{ form(delete_form) }}</li>
+        </ul>
+    </div>
+</div>
+{{ include("newartBundle:Expo:footer.html.twig") }}

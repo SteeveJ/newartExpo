@@ -1,0 +1,30 @@
+newart:
+    resource: "@newartBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+
+fos_user_security:
+    resource: "@AdminBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@AdminBundle/Resources/config/routing/profile.xml"
+    prefix: /profileUser
+
+fos_user_register:
+    resource: "@AdminBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@AdminBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@AdminBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

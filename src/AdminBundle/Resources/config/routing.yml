@@ -1,0 +1,15 @@
+admin_articles:
+    resource: "@AdminBundle/Resources/config/routing/articles.yml"
+    prefix:   /articlesUser
+
+admin_post:
+    resource: "@AdminBundle/Resources/config/routing/post.yml"
+    prefix:   /postUser
+
+newart:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+
+nae_plateform_profil:
+    path:     /profile/{id}
+    defaults: { _controller: AdminBundle:Default:profile }

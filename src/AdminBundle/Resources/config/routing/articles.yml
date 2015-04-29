@@ -1,0 +1,22 @@
+articles:
+    path:     /
+    defaults: { _controller: "AdminBundle:Articles:index" }
+
+articles_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Articles:show" }
+
+articles_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Articles:create" }
+    methods:  [GET,POST]
+
+articles_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Articles:update" }
+    methods:  [GET, POST, PUT]
+
+articles_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Articles:delete" }
+    methods:  [GET, POST, DELETE]

@@ -1,0 +1,31 @@
+nae_plateform_books_profile:
+    path:     /books/profile/{id}
+    defaults: { _controller: newartBundle:Expo:profile }
+
+nae_plateform_books:
+    path:     /books/{id}
+    defaults: { _controller: newartBundle:Expo:books, id: 1 }
+
+nae_plateform_expo:
+    path:     /expo/
+    defaults: { _controller: newartBundle:Expo:expo }
+
+nae_plateform_nae:
+    path:     /nae/
+    defaults: { _controller: newartBundle:Expo:nae }
+
+nae_plateform_contact:
+    path:     /contact/
+    defaults: { _controller: newartBundle:Expo:contact }
+
+nae_plateform_articles:
+    path:     /articles/
+    defaults: { _controller: newartBundle:Expo:articles }
+
+nae_plateform_article:
+    path:     /article/
+    defaults: { _controller: newartBundle:Expo:article }
+
+nae_plateform_cvg:
+    path:     /cvg/
+    defaults: { _controller: newartBundle:Expo:cvg }

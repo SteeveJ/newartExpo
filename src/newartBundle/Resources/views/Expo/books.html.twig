@@ -1,0 +1,145 @@
+{# Include #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+
+{# Nav-Left #}
+{{ include("newartBundle:Expo:nav.html.twig") }}
+{# END Nav-Left #}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-11 col-md-offset-1 books">
+            <h1 class="text-center">{{ 'New Art Expo\n'|nl2br }}<span class="titlestyle"> Tous les books</span></h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-md-offset-4">
+            <div class="searchbooks">
+                <form>
+                    <input id="recherche" type="text" placeholder="Effectuer une recherche" required>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-1 iconloupe">
+            <form>
+                <input type="image" src="{{ asset('bundles/admin/images/icons/loupe.png') }}" alt="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+{# End Title & Search fields#}
+
+        {# Filtre latéral #}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1 filtre">
+            <p class="text-center">Filtrer par</p>
+
+            <div class="dropdown dropdown2 deroulant">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    Catégories
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Street Art</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Toile</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Dessin</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">OKLM</span></a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown dropdown3 deroulant">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    Pays
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">France</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Pays-Bas</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Allemagne</span></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="white">Belgique</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+{% set i = 0 %}
+    {% for user in users|slice(min, max) %}
+        {% if user.firstname != 'admin' %}
+            {% if i == 0 or i == 3 or i == 6 %}
+                <div class="container">
+                    <div class="booksdesktop">
+                        <div class="col-md-8 col-md-offset-4">
+                            <div class="row imagebooks">
+            {% endif %}
+            <div class="col-xs-3">
+                <a href="{{ path('nae_plateform_books_profile', {'id': user.id}) }}"><img src="" class="img-responsive"></a>
+            </div>
+            {% set i = i+1 %}
+            {% if i == 3 or i == 6 or i == 9 %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+<nav class="col-md-8 col-md-offset-4">
+    <ul class="pagination">
+        {% set nbPage = (users|length/9) %}
+        {% set nbPage = nbPage|number_format %}
+        {% if nbPage > 1 %}
+            {% if nbPage > 6 %}
+                {% for page in 1..6 %}
+                    <li><a href="{{ path('nae_plateform_books', {'id': page }) }}">{{ page }}</a></li>
+                {% endfor %}
+                <li><a href="#">...</a></li>
+                <li><a href="{{ path('nae_plateform_books', {'id': nbPage }) }}">{{ nbPage }}</a></li>
+            {% else %}
+                {% for page in 1..nbPage %}
+                    <li><a href="{{ path('nae_plateform_books', {'id': page }) }}">{{ page }}</a></li>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    </ul>
+</nav>
+
+<div class="container mobilebooks">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4">
+
+            <div class="row imagebooks">
+
+                <div class="col-xs-6">
+                    <a href=""><img src="{{ asset('bundles/admin/images/books/1.jpg') }}" class="imgbooksmobile img-responsive"></a>
+                </div>
+                <div class="col-xs-6">
+                    <a href=""><img src="{{ asset('bundles/admin/images/books/2.jpg') }}" class="imgbooksmobile img-responsive"></a>
+                </div>
+
+            </div>
+
+            <div class="row imagebooks">
+
+                <div class="col-xs-6">
+                    <a href=""><img src="{{ asset('bundles/admin/images/books/3.jpg') }}" class="imgbooksmobile img-responsive"></a>
+                </div>
+                <div class="col-xs-6">
+                    <a href=""><img src="{{ asset('bundles/admin/images/books/4.jpg') }} " class="imgbooksmobile img-responsive"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ include("newartBundle:Expo:footer.html.twig") }}

@@ -1,0 +1,64 @@
+<div class="row">
+    <section id="profile" class="fos_user_user_show col-md-12">
+        <h2>Mon profile : </h2>
+        <a href="{{ path('fos_user_profile_edit') }}">edit</a>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="" alt=""/>
+            </div>
+            <div class="col-md-8">
+                <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+                <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+                {% if user.blaze != null %}
+                    <p>Nom d'artiste : {{ user.blaze }}</p>
+                {% endif %}
+                {% if user.biography is defined %}
+                    <h4>Biographie :</h4> {{ user.biography|raw }}
+                {% endif %}
+            </div>
+
+        </div>
+
+    </section>
+    <section id="post" class="post col-md-12">
+        <h2>Les Actualités :</h2>
+        <a href="{{ path('post_create') }}">Nouvelle actualité</a>
+        <table class="records_list">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Createdat</th>
+                <th>Updatedat</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in posts|slice(0,5) %}
+                <tr>
+                    <td><a href="{{ path('post_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
+                    <td>{{ post.title|truncate(15) }}</td>
+                    <td>{{ post.text|raw|truncate(20) }}</td>
+                    <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if post.updatedAt %}{{ post.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('post_show', { 'id': post.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('post_update', { 'id': post.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('post') }}">Toutes les actualités</a>
+    </section>
+    <section id="article">
+        
+    </section>
+</div>

@@ -1,0 +1,37 @@
+{# Include #}
+{{ include("newartBundle:Expo:header.html.twig") }}
+
+<body>
+<div id="slides">
+    <div class="slides-container">
+        <img src="{{ asset('bundles/admin/images/slider/image1.png') }}" width="1024" height="682" alt="image_slider_1">
+        <img src="{{ asset('bundles/admin/images/slider/image2.jpg') }}" width="1024" height="682" alt="image_slider_2">
+        <img src="{{ asset('bundles/admin/images/slider/image3.jpg') }}" width="1024" height="682" alt="image_slider_3">
+        <img src="{{ asset('bundles/admin/images/slider/image2.jpg') }}" width="1024" height="682" alt="image_slider_2">
+    </div>
+    <div class="svg-wrap">
+        <svg width="64" height="64" viewBox="0 0 64 64">
+            <path id="arrow-left-1" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+        </svg>
+        <svg width="64" height="64" viewBox="0 0 64 64">
+            <path id="arrow-right-1" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+        </svg>
+    </div>
+    <nav class="nav-circleslide">
+        <a class="prev" href="/item1">
+            <span class="icon-wrap"><svg class="icon" width="32" height="32" viewBox="0 0 64 64"><use xlink:href="#arrow-left-1"></svg></span>
+            <div><img src="{{ asset('bundles/admin/images/slider/23.png') }}" alt="Previous thumb"/></div>
+        </a>
+        <a class="next" href="/item3">
+            <span class="icon-wrap"><svg class="icon" width="32" height="32" viewBox="0 0 64 64"><use xlink:href="#arrow-right-1"></svg></span>
+            <div><img src="{{ asset('bundles/admin/images/slider/24.png') }}" alt="Next thumb"/></div>
+        </a>
+    </nav>
+</div>
+
+<script>
+    $('#slides').superslides({
+        animation: 'fade'
+    });
+</script>
+</body>
