@@ -1,0 +1,30 @@
+picture:
+    path:     /
+    defaults: { _controller: "AdminBundle:Picture:index" }
+
+picture_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Picture:show" }
+
+picture_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Picture:new" }
+
+picture_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Picture:create" }
+    methods:  POST
+
+picture_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Picture:edit" }
+
+picture_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Picture:update" }
+    methods:  [POST, PUT]
+
+picture_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Picture:delete" }
+    methods:  [POST, DELETE]

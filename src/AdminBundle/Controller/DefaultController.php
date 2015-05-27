@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Controller;
 
+use AdminBundle\Entity\duJour;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -13,15 +14,15 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $user = $this->container->get('security.context')->getToken()->getUser();
-        if (!is_object($user) || !$user instanceof UserInterface) {
-            throw new AccessDeniedException('This user does not have access to this section.');
-        }
 
         return $this->render('newartBundle:Expo:index.html.twig',[
             'user' => $user,
         ]);
     }
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function profileAction()
     {
         $user = $this->container->get('security.context')->getToken()->getUser();
@@ -30,10 +31,36 @@ class DefaultController extends Controller
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+
         return $this->render('newartBundle:Expo:profile.html.twig',[
             'user' => $user,
             'posts'=> $posts,
         ]);
     }
 
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function artisteDuJourAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $artisteDuJour = $em->getRepository('AdminBundle:duJour');
+        $artiste =$artisteDuJour->findOneById(1)->getIdUser();
+        $artiste =$artisteDuJour->findOneById(1)->setIdUser($id);
+        var_dump($artiste);
+        if($id != null || $id != ""){
+            /*$userManager = $this->container->get('fos_user.user_manager');
+            $users = $userManager->findUsers();
+
+            $artisteDuJour = new duJour();
+
+            $artisteDuJour->setIdUser($id) ;
+            $em->persist($artisteDuJour);
+            $em->flush();*/
+
+            return $this->render('AdminBundle:dujour:artiste.html.twig',[
+                'users'=>$users,
+            ]);
+        }
+    }
 }

@@ -32,15 +32,36 @@ class ProfileController extends Controller
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('AdminBundle:Post')->findby([],['updatedAt' => 'DESC']);
 
+
         $user = $this->container->get('security.context')->getToken()->getUser();
+
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
-
+        if($user->isSuperAdmin() == true){
+            $userManager = $this->container->get('fos_user.user_manager');
+            $users = $userManager->findUsers();
+            $pictures = $em->getRepository('AdminBundle:Picture')->findby([],['updatedAt' => 'DESC']);
+            //var_dump($pictures);die;
+            return $this->container->get('templating')->renderResponse('FOSUserBundle:Profile:show.html.'.$this->container->getParameter('fos_user.template.engine'), [
+                'user' => $user,
+                'posts' => $posts,
+                'isAdmin' => true,
+                'users'=>$users,
+                'pictures'=>$pictures,
+                //'urlProfile' => $path,
+            ]);
+        }
+        /*$imageProf = $em->getRepository('AdminBundle:User');
+        $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+        var_dump($helper, $imageProf);
+        $path = $helper->asset($imageProf, 'image');
+        var_dump($path);die;*/
 
         return $this->container->get('templating')->renderResponse('FOSUserBundle:Profile:show.html.'.$this->container->getParameter('fos_user.template.engine'), [
             'user' => $user,
             'posts' => $posts,
+            //'urlProfile' => $path,
         ]);
     }
 

@@ -27,33 +27,52 @@ class User extends BaseUser implements EncoderAwareInterface
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $id;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=70, nullable=true)
+     */
+    private $firstname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=70, nullable=true)
+     */
+    private $lastname;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="birthday", type="datetime", nullable=true)
+     */
+    private $birthday;
 
     /**
      * @var string
      *
      * @ORM\Column(name="biography", type="text", nullable=true)
-     *
      */
-    protected $biography;
+    private $biography;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="user_image", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="user_image", fileNameProperty="image_name")
      *
      * @var File $imageFile
      */
     protected $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255, name="image_name")
+     * @ORM\Column(type="string", length=255, name="image_name", nullable=true)
      *
      * @var string $imageName
      */
     protected $imageName;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      * @var \DateTime $updatedAt
      */
@@ -67,6 +86,101 @@ class User extends BaseUser implements EncoderAwareInterface
      */
     protected $legacyEncoder;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="blaze", type="string", length=80, nullable=true)
+     *
+     */
+    protected $blaze;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
+     *
+     */
+    protected $twitter;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
+     *
+     */
+    protected $facebook;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instagram", type="string", length=255, nullable=true)
+     *
+     */
+    protected $instagram;
+
+    /**
+     * @return string
+     */
+    public function getBlaze()
+    {
+        return $this->blaze;
+    }
+
+    /**
+     * @param string $blaze
+     */
+    public function setBlaze($blaze)
+    {
+        $this->blaze = $blaze;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param string $twitter
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param string $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstagram()
+    {
+        return $this->instagram;
+    }
+
+    /**
+     * @param string $instagram
+     */
+    public function setInstagram($instagram)
+    {
+        $this->instagram = $instagram;
+    }
     /**
      * Constructor
      */
@@ -146,4 +260,97 @@ class User extends BaseUser implements EncoderAwareInterface
     {
         return $this->imageName;
     }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     * @return UserPersonalInformation
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     * @return UserPersonalInformation
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set birthday
+     *
+     * @param string $birthday
+     * @return UserPersonalInformation
+     */
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    /**
+     * Get birthday
+     *
+     * @return string
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set biography
+     *
+     * @param string $biography
+     * @return UserPersonalInformation
+     */
+    public function setBiography($biography)
+    {
+        $this->biography = $biography;
+
+        return $this;
+    }
+
+    /**
+     * Get biography
+     *
+     * @return string
+     */
+    public function getBiography()
+    {
+        return $this->biography;
+    }
+
 }

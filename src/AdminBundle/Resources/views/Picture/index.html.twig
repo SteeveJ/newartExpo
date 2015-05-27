@@ -1,37 +1,44 @@
-{{ include("newartBundle:Expo:header.html.twig") }}
+{% extends '::base.html.twig' %}
 
-{{ include("newartBundle:Expo:nav.html.twig") }}
-<div class="row">
-    <div class="col-sm-offset-2 col-md-8 col-sm-8 col-xs-offset-0 col-xs-12">
-    <h1>Articles list</h1>
+{% block body -%}
+    <h1>Picture list</h1>
 
     <table class="records_list">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
-                <th>Picture</th>
                 <th>Description</th>
+                <th>Price</th>
+                <th>Path</th>
+                <th>Exposable</th>
                 <th>Createdat</th>
                 <th>Updatedat</th>
+                <th>Featuringdate</th>
+                <th>Imagename</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('articles_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('picture_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.name }}</td>
-                <td>{{ entity.picture }}</td>
                 <td>{{ entity.description }}</td>
+                <td>{{ entity.price }}</td>
+                <td>{{ entity.path }}</td>
+                <td>{{ entity.exposable }}</td>
                 <td>{% if entity.createdAt %}{{ entity.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.featuringDate %}{{ entity.featuringDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.imageName }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('articles_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('picture_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('articles_update', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('picture_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -42,11 +49,9 @@
 
         <ul>
         <li>
-            <a href="{{ path('articles_create') }}">
+            <a href="{{ path('picture_new') }}">
                 Create a new entry
             </a>
         </li>
     </ul>
-    </div>
-</div>
-{{ include("newartBundle:Expo:footer.html.twig") }}
+    {% endblock %}

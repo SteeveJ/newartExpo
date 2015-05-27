@@ -93,37 +93,7 @@ class UserPersonalInformation
      */
     private $coverpicture;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="blaze", type="string", length=80, nullable=true)
-     *
-     */
-    protected $blaze;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="twitter", type="string", length=255, nullable=true)
-     *
-     */
-    protected $twitter;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="facebook", type="string", length=255, nullable=true)
-     *
-     */
-    protected $facebook;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="instagram", type="string", length=255, nullable=true)
-     *
-     */
-    protected $instagram;
 
     /**
      * Get id

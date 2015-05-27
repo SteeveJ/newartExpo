@@ -1,9 +1,7 @@
-{{ include("newartBundle:Expo:header.html.twig") }}
+{% extends '::base.html.twig' %}
 
-{{ include("newartBundle:Expo:nav.html.twig") }}
-<div class="row">
-    <div class="col-md-8 col-sm-offset-2 col-sm-8 col-xs-offset-0 col-xs-12">
-    <h1>Articles</h1>
+{% block body -%}
+    <h1>Picture</h1>
 
     <table class="record_properties">
         <tbody>
@@ -16,12 +14,20 @@
                 <td>{{ entity.name }}</td>
             </tr>
             <tr>
-                <th>Picture</th>
-                <td>{{ entity.picture }}</td>
-            </tr>
-            <tr>
                 <th>Description</th>
                 <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ entity.price }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ entity.path }}</td>
+            </tr>
+            <tr>
+                <th>Exposable</th>
+                <td>{{ entity.exposable }}</td>
             </tr>
             <tr>
                 <th>Createdat</th>
@@ -31,22 +37,28 @@
                 <th>Updatedat</th>
                 <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
             </tr>
+            <tr>
+                <th>Featuringdate</th>
+                <td>{{ entity.featuringDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Imagename</th>
+                <td>{{ entity.imageName }}</td>
+            </tr>
         </tbody>
     </table>
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('articles') }}">
+        <a href="{{ path('picture') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('articles_update', { 'id': entity.id }) }}">
+        <a href="{{ path('picture_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
-    </div>
-</div>
-{{ include("newartBundle:Expo:footer.html.twig") }}
+{% endblock %}

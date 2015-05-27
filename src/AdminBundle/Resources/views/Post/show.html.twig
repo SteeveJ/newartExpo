@@ -2,45 +2,23 @@
 
 {% block fos_user_content %}
     <div class="container">
-            <h1>Post</h1>
-
-            <table class="record_properties">
-                <tbody>
-                    <tr>
-                        <th>Id</th>
-                        <td>{{ entity.id }}</td>
-                    </tr>
-                    <tr>
-                        <th>Title</th>
-                        <td>{{ entity.title }}</td>
-                    </tr>
-                    <tr>
-                        <th>Text</th>
-                        <td>{{ entity.text|raw }}</td>
-                    </tr>
-                    <tr>
-                        <th>Createdat</th>
-                        <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
-                    </tr>
-                    <tr>
-                        <th>Updatedat</th>
-                        <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
-                    </tr>
-                </tbody>
-            </table>
-
-                <ul class="record_actions">
-            <li>
-                <a href="{{ path('post') }}">
-                    Back to the list
-                </a>
-            </li>
-            <li>
-                <a href="{{ path('post_update', { 'id': entity.id }) }}">
-                    Edit
-                </a>
-            </li>
-            <li>{{ form(delete_form) }}</li>
-        </ul>
+        <h1>Nom de l'actualité : {{ entity.title }}</h1>
+        <p>Actualité créer le : <date>{{ entity.createdAt|date('Y-m-d') }}</date></p>
+        <p>Contenu : </p>
+        <div class="spacing-bottom"></div>
+        <p>{{ entity.text|raw }}</p>
+        <div class="btn-group">
+            <a href="{{ path('fos_user_profile_show') }}">
+                <button class="btn btn-default">
+                    Retour à la page profile
+                </button>
+            </a>
+            <a href="{{ path('post_update', { 'id': entity.id }) }}">
+                <button class="btn btn-primary">
+                    Editer Actualiter
+                </button>
+            </a>
+        </div>
+        {{ form(delete_form) }}
     </div>
 {% endblock %}

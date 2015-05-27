@@ -3,12 +3,16 @@
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Picture
  *
  * @ORM\Table(name="picture")
  * @ORM\Entity
+ *
+ * @Vich\Uploadable
  */
 class Picture
 {
@@ -21,12 +25,6 @@ class Picture
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\ManytoOne(targetEntity="User")
-     */
-    private $userId;
 
     /**
      * @var string
@@ -83,6 +81,32 @@ class Picture
      * @ORM\Column(name="featuring_date", type="datetime", nullable=true)
      */
     private $featuringDate;
+
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     *
+     */
+    private $user;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="user_image", fileNameProperty="imageName")
+     *
+     * @var File $imageFile
+     */
+    protected $imageFile;
+
+
+    /**
+     * @ORM\Column(type="string", length=255, name="image_name", nullable=true)
+     *
+     * @var string $imageName
+     */
+    protected $imageName;
 
 
 
@@ -279,28 +303,69 @@ class Picture
     {
         return $this->featuringDate;
     }
-    
 
     /**
-     * Set userId
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
      *
-     * @param User $userId
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param string $imageName
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
      * @return Picture
      */
-    public function setUserId(User $userId = null)
+    public function setUser(User $user = null)
     {
-        $this->userId = $userId;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userId
+     * Get user
      *
      * @return User
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->userId;
+        return $this->user;
     }
 }

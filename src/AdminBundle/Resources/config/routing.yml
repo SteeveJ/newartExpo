@@ -1,3 +1,7 @@
+admin_picture:
+    resource: "@AdminBundle/Resources/config/routing/picture.yml"
+    prefix:   /picture
+
 admin_articles:
     resource: "@AdminBundle/Resources/config/routing/articles.yml"
     prefix:   /articlesUser
@@ -13,3 +17,8 @@ newart:
 nae_plateform_profil:
     path:     /profile/{id}
     defaults: { _controller: AdminBundle:Default:profile }
+
+artisteDuJour:
+    path:   /artisteDuJour/{id}
+    defaults: { _controller: AdminBundle:Default:artisteDuJour, id:1 }
+

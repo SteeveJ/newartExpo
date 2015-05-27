@@ -1,0 +1,58 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+
+{% block fos_user_content %}
+    <div class="container">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="spacing-bottom"></div>
+            <div class="spacing-bottom"></div>
+                <row>
+                    <div class="col-md-6">
+                        <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for artiste in users|slice(0,users|length/2) %}
+                                <tr>
+                                    <td>{{ artiste.username }}</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="{{ path('artisteDuJour', {'id': artiste.id }) }}"><button class="btn btn-primary">Selectionner</button></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for artiste in users|slice((users|length/2)+1, users|length) %}
+                                <tr>
+                                    <td>{{ artiste.username }}</td>
+                                    <td>
+                                        <ul>
+                                            <li><a href="{{ path('artisteDuJour', {'id': artiste.id }) }}"><button class="btn btn-primary">Selectionner</button></a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </row>
+        {% else %}
+            <h1>Veuiller vous rediriger <a href="{{ path('newart') }}"></a></h1>
+        {% endif %}
+    </div>
+{% endblock fos_user_content %}
