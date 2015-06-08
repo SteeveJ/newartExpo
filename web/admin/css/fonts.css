@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'DUBIEL';
+    src: url('../css/fonts/DUBIEL.eot');
+    src: url('../css/fonts/DUBIEL.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/DUBIEL.woff') format('woff'),
+         url('../css/fonts/DUBIEL.ttf') format('truetype'),
+         url('../css/fonts/DUBIEL.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gillsans';
+    src: url('../css/fonts/gillsans.eot');
+    src: url('../css/fonts/gillsans.eot?#iefix') format('embedded-opentype'),
+         url('../css/fonts/gillsans.woff') format('woff'),
+         url('../css/fonts/gillsans.ttf') format('truetype'),
+         url('../css/fonts/gillsans.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gill-sans-light';
+    src: url('../css/fonts/gill-sans-light.eot');
+    src: url('../css/fonts/gill-sans-light.eot?#iefix') format('embedded-opentype'),
+    url('../css/fonts/gill-sans-light.woff') format('woff'),
+    url('../css/fonts/gill-sans-light.ttf') format('truetype'),
+    url('../css/fonts/gill-sans-light.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'DubielItalic';
+    src: url('fonts/DubielItalic.eot');
+    src: local('☺'), url('fonts/DubielItalic.woff') format('woff'), url('fonts/DubielItalic.ttf') format('truetype'), url('fonts/DubielItalic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Georgia';
+    src: url('../css/fonts/Georgia.eot');
+    src: url('../css/fonts/Georgia.eot?#iefix') format('embedded-opentype'),
+    url('../css/fonts/Georgia.woff') format('woff'),
+    url('../css/fonts/Georgia.ttf') format('truetype'),
+    url('../css/fonts/Georgia.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

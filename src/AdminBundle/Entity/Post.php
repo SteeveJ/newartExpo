@@ -52,7 +52,7 @@ class Post
     /**
      * @var User
      *
-     * @ORM\ManytoOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      */
     private $users;
 

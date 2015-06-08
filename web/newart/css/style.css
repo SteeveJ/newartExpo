@@ -1,0 +1,1732 @@
+@import './fonts.css';
+/* Full Page */
+body {
+    background-color: #262b2d;
+    color: white;
+}
+
+p{
+    font-family: 'gill-sans-light';
+    font-size: 19px;
+}
+.titlestyle{
+    font-family: 'gill-sans-light';
+    color: white;
+    font-size: 40px;
+}
+.barre{
+    width: 85px;
+    border-top: 1px solid #4e5254;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-top: 35px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/* END Full Page */
+/* Nav / Slider */
+/* Nav-Left */
+.menu{
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 79px;
+    background-color: #1b2021;
+    border-right: 1px solid #4c5153;
+    border-bottom: 1px solid #4c5153;
+    overflow: hidden;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.menu .box-nav-top{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    line-height: 90px;
+    border-bottom: 1px solid #4c5153;
+    color: #000;
+    padding: 0px;
+}
+.menu .nav-logo{
+    top: 24px;
+    position: absolute;
+    left: 164px;
+    opacity: 0.5;
+}
+
+.menu #box-nav {
+    border-bottom: 0.7px solid #4c5153;
+}
+.menu #box-nav{
+    border-bottom: 0.7px solid #4c5153;;
+    padding-bottom: 20px;
+}
+.menu #box-nav-bottom{
+    border-top: 1px solid #4c5153;
+
+}
+.menu .ico-nav{
+    margin-bottom: 25px;
+    margin-left: 22px;
+    height: 25px;
+    opacity: 0.4;
+}
+.menu ul.nav-left{
+    list-style-type: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 90px;
+    color: #000;
+    padding: 0px;
+}
+.menu .ico-nav-left{
+    margin-bottom: 25px;
+    margin-left: 30px;
+    height: 25px;
+}
+.menu li a {
+    padding: 0 15px 0 79px;
+    height: 63px;
+    line-height: 90px;
+    font-size: 1.14em;
+    display: block;
+    text-align: left;
+    color: #666;
+    font-family: 'gill-sans-light';
+    font-weight: 300;
+    width: 261px;
+}
+.menu li a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.menu li#about a {
+    background: url(../images/icons/a-propos.png) no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#about :hover {
+    background: url(../images/icons/icon-hover/a-propos.png) no-repeat 22px 25px;
+}
+.menu li#find a {
+    background: url(../images/icons/recherche.png)no-repeat 22px 25px;
+}
+.menu li#find a:hover {
+    background: url(../images/icons/icon-hover/loupe.png) no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#profil a {
+    background: url(../images/icons/profil.png)no-repeat 22px 25px;
+}
+.menu li#profil a:hover {
+    background: url(../images/icons/icon-hover/profil.png) no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#books a {
+    background: url(../images/icons/touslesbooks.png)no-repeat 22px 25px;
+}
+.menu li#books a:hover {
+    background: url(../images/icons/icon-hover/touslesbooks.png) no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#expo a {
+    background: url(../images/icons/expovirtuel.png)no-repeat 22px 25px;
+}
+.menu li#expo a:hover {
+    background: url(../images/icons/icon-hover/expovirtuelle.png)no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#shop a {
+    background: url(../images/icons/boutique.png)no-repeat 22px 25px;
+}
+.menu li#shop a:hover {
+    background: url(../images/icons/icon-hover/laboutique.png)no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#contact a {
+    background: url(../images/icons/contact.png)no-repeat 22px 25px;
+}
+.menu li#contact a:hover {
+    background: url(../images/icons/icon-hover/mail.png)no-repeat 22px 25px;
+    cursor:pointer;
+}
+.menu li#share a {
+    background: url(../images/icons/share.png)no-repeat 22px 25px;
+}
+.menu li#share a:hover {
+    background: url(../images/icons/icon-hover/share.png)no-repeat 22px 25px;
+    cursor:pointer;
+}
+
+/* END Nav-Left */
+.logo {
+    background: url(../images/logo.png);
+    position: absolute;
+    z-index: 3;
+    height: 52px;
+    width: 102px;
+    margin-top: 77px;
+    margin-left: 48%;
+}
+.inscription .btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+.inscription .btn-default {
+    color: #666666;
+    background-color: #1b2021;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    border-color: #adadad;
+    font-family: 'gill-sans-light';
+    border-radius: 0px;
+}
+.inscription .btn-default:hover {
+    color: #ffffff;
+;
+    outline: 0;
+}
+/* Slider */
+.slider{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    margin-left: 0px;
+}
+.slider img {
+    width: 100%;
+    height: 100% !important;
+    margin-left: 80px;
+}
+.motif{
+    background: url(../images/backgrounds/motif.png) repeat;
+    width: 3px; height: 3px;
+    position: absolute;
+    margin-left: 80px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.slider .item{
+    background: #333;
+    text-align:center;
+    height: 531px !important;
+    height: 531px !important;
+}
+.logo-nae{
+    background: url(../images/logo.png) no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: 90px;
+    margin-left: 45%;
+}
+.slider h1{
+    font-family: 'DubielItalic', verdana;
+    font-size: 140px;
+    position: relative;
+    bottom: 140px;
+    text-shadow: none;
+    left: 40px;
+}
+.slider button {
+    position: relative;
+    bottom: 75px;
+    left: 40px;
+    background-color: transparent;
+    color: #fff;
+    padding: 13px;
+    border-radius: 0px;
+    font-family: 'gillsans', verdana;
+}
+.slider button:hover {
+    color: #666;
+}
+.btn-art{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 1);
+}
+.carousel-indicators {
+    left: 53%;
+}
+/* Nav Horizontal */
+.nav-horizontal{
+    height: 76px;
+    background-color: #262b2d;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 70px;
+    border-top: 1px solid #4c5153;
+}
+.nav-horizontal h4 {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.5);
+}
+.navboutique, .navexpovirtuel, .navcoupcoeur {
+    border-right: solid 1px #434749;
+    border-bottom: solid 1px #434749;
+    background-color: #1b2021;
+    padding-top: 10px;
+    color: #666666;
+}
+.navboutique :hover, .navexpovirtuel :hover, .navcoupcoeur :hover{
+    color: #ffffff;
+}
+.navboutique a, .navexpovirtuel a, .navcoupcoeur a{
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    -o-opacity: 0.5;
+    opacity: 0.5;
+}
+.navboutique a:hover, .navexpovirtuel a:hover, .navcoupcoeur a:hover{
+    opacity: 1;
+}
+.carousel-inner {
+    border-bottom: 1px solid #2b3031;
+}
+.carousel-indicators li{
+    border: none;
+    background-color: rgba(255,255,255,0.4);
+    width: 8px; height: 8px;
+    margin: 0px;
+}
+.carousel-indicators .active {
+    width: 8px; height: 8px;
+}
+
+/* Pop-Up */
+
+.btnSend{
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'gillsans', verdana;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+/* What is NAE */
+.presnae{
+    margin-top: 92px;
+    margin-bottom: 75px;
+}
+.presnae h1{
+    font-family: 'DubielItalic',verdana;
+    font-size: 36px;
+    color: #666666;
+}
+.undercontent{
+    color: #666666;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Parallax */
+.parallax {
+    background: url("../images/parallax.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-bacground-size: cover;
+    -o-background-size: cover;
+    padding: 100px 0px 100px 145px;
+    margin: 20px 0px 0px 0px;
+}
+.parallax button{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    text-transform: uppercase;
+    font-family: 'gillsans', verdana;
+    font-size: 1.2em;
+}
+.parallax a:hover{
+    text-decoration: none;
+}
+
+/* News */
+
+
+.imgactu{
+    border-radius: 3px;
+}
+
+/* date-separator*/
+.date-separator {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.date-separator h4 {
+    border: solid 1px #666;
+    padding: 47px 0px 40px 0px;
+    border-radius: 100px;
+    background-color: #1c2122;
+    font-size: 15px;
+    color: #666;
+}
+.news{
+    margin-top: 93px;
+}
+.news h1{
+    font-family: 'DubielItalic', verdana;
+    font-size: 2.5em;
+    color: #666666;
+    line-height: 50px;
+}
+.newsarticle{
+    font-family: 'gill-sans-light', verdana;
+    margin: 64px 20px 0px -15px;
+}
+.newsarticle img {
+    width: 100%;
+}
+.newsarticle h2{
+    font-size: 1.8em;
+}
+.newsarticle h3{
+    font-size: 1.5em;
+}
+.newsarticle p{
+    font-size: 1.2em;
+    color: #666666;
+}
+.newsarticle a{
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.newsarticle a:hover{
+    text-decoration: none;
+}
+.trait-separator {
+    background: url("../images/trait-separator.png") no-repeat;
+    height: 939px;
+    width: 100%;
+    position: absolute;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: -10px;
+}
+.article-suite {
+    margin-top: 120px;
+}
+.last-article-news {
+    margin-top: 80px;
+}
+.newsbutton{
+    margin-top: 165px;
+}
+.newsbutton button{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'gill-sans-light', verdana;
+    font-size: 1.2em;
+}
+
+/* Artiste du jour /oeuvre du jour */
+.artisteandoeuvre{
+    margin-left: 75px;
+    margin-right: 0px;
+}
+.artisteandoeuvre h1{
+    margin-top: 150px;
+    font-family: 'gill-sans-light', verdana;
+    font-size: 36px;
+    color: #ffffff;
+    font-size: 40px;
+}
+.artisteandoeuvre .intro-artisteandoeuvre {
+    color: rgba(255,255,255,0.8);
+    font-family: 'gill-sans-light', verdana;
+    margin: 50px 260px 30px 260px;
+    margin-top: 50px;
+    margin-left: 260px;
+    margin-right: 260px;
+    font-size: 17px;
+}
+.artiste {
+    background: url("../images/backgrounds/artiste-du-jour.jpg");
+    background-size: cover;
+    height: 310px;
+    padding: 40px;
+}
+.oeuvredujour {
+    background: url("../images/backgrounds/oeuvre-du-jour.jpg");
+    background-size: cover;
+    height: 310px;
+    padding: 40px;
+}
+.artiste h4, .oeuvredujour h4 {
+    font-family: 'gill-sans-light', verdana;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 2.5px;
+    font-size: 18px;
+}
+.artiste h2, .oeuvredujour h2 {
+    font-family: 'DubielItalic', verdana;
+    color: rgba(255,255,255,0.95);
+    font-size: 65px;
+}
+.artiste p, .oeuvredujour p {
+    font-family: 'gillsans', verdana;
+    color: #666666;
+    font-size: 14px;
+    padding-right: 60px;
+}
+
+/* newsletter */
+.newsletter {
+    color: rgba(255,255,255,0.8);
+    font-family: 'gill-sans-light', verdana;
+    margin-top: 50px;
+    margin-left: -10px;
+    margin-right: 0px;
+}
+.newsletter input{
+    background-color: #1b2021;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.newsletterbutton {
+    font-family: 'gillsans', verdana;
+    padding: 12px;
+    margin-left: 12px;
+}
+.newsletter p {
+    font-family: 'gill-sans-light',verdana;
+    color: rgba(255,255,255,0.4);
+    font-size: 18px;
+}
+
+
+/* Footer */
+.footer {
+    margin: 150px 0px 15px 80px;
+}
+
+.footer h4 {
+    font-family: 'gill-sans-light', verdana;
+    color: #424446;
+    font-size: 16px;
+}
+.logo-footer{
+    background: url(../images/logo.png) no-repeat bottom;
+    height: 52px;
+    width: 102px;
+    background-size: 80%;
+    opacity: 0.1;
+}
+.logo-footer:hover{
+    opacity: 1;
+}
+
+.icone-social-footer .list-inline {
+    margin-left: -40px !important;
+}
+
+.icone-fb-footer, .icone-t-footer, .icone-insta-footer {
+    height: 29px; width: 29px;
+    position: absolute;
+    opacity: 0.1;
+}
+
+.icone-fb-footer:hover, .icone-t-footer:hover, .icone-insta-footer:hover {
+    opacity: 1;
+}
+.footer li {
+    padding: 20px;
+}
+.icone-fb-footer {
+    background: url(../images/icons/social/facebook.png);
+}
+.icone-t-footer {
+    background: url(../images/icons/social/twitter.png);
+}
+.icone-insta-footer{
+    background: url(../images/icons/social/instagram.png);
+}
+.tousdroitreserves {
+    margin-top: 90px;
+    margin-bottom: 20px;
+}
+.footer h6 {
+    font-family: 'gill-sans-light', verdana;
+    color: #666;
+    font-size: 14px;
+}
+/*------------------*/
+/* CSS Profil Page */
+/*-----------------*/
+.portofolio{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.profile {
+    color: #fff;
+    background: url(../images/backgrounds/bg-header-profil.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-bottom: 23px;
+    padding-top: 35px;
+}
+.img-circle{
+    width: 140px;
+    height: 140px;
+}
+
+.borderactus{
+    margin-bottom: 75px;
+    margin-top: 75px;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-bottom: 1px solid #4e5254;
+    border-top: 1px solid #4e5254;
+}
+
+.contactProfile p{
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* Container-Profile */
+.containerProfile{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.containerProfile img{
+    height: 170px;
+}
+
+.containerProfile h1{
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.containerProfile p{
+    font-size: 19px;
+}
+
+div.container-social{
+    margin: 0 auto;
+}
+
+/* End Container-Profile */
+.img-padding{
+    padding: 2px 2px 2px 2px ;
+}
+
+.actualityText{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-family: 'gill-sans-light', verdana;
+    color: #646565;
+}
+.dateProfile{
+    font-size: 1.2em;
+    font-family: Gillsans;
+    color: #6f6f6f;
+}
+ul.social-buttons>li>a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #5d5F5F;
+    font-size: 28px;
+    background-color: #fff;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+.portofolio h1{
+    font-family: 'DubielItalic', verdana;
+    font-size: 3em;
+    color: #919799;
+}
+
+/* btn */
+.btn-space{
+    margin-bottom: 25%;
+}
+/* image */
+.image-size{
+    display: inline-block;
+    box-sizing: border-box;
+}
+.image-1{
+    height: 370px;
+    width: 20%;
+}
+.image-2{
+    height: 370px;
+    width: 40%;
+}
+.image-3{
+    height: 370px;
+    width: 39%;
+}
+.image-4{
+    height: 300px;
+    width: 70%;
+}
+.image-5{
+    height: 300px;
+    width: 29%;
+}
+
+.actualityLien{
+    font-family: 'gillsans', verdana;
+    font-size: 1.2em;
+    color : #8a8b8b;
+}
+
+.actualityLien:hover{
+    color : #39b3d7;
+}
+
+/* Font */
+.contactProfile{
+    letter-spacing: 0.01em;
+    color: rgba(255,255,255, 0.63);
+    line-height: 0;
+    padding-bottom: 15px;
+    font-size: 10px;
+}
+.profileTitle{
+    font-family: 'gillsans', verdana;
+    font-size: 40px;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 31px;
+}
+.profileTitleActuality{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    font-size: 18px;
+}
+.profileTitleOeuvre{
+    margin-bottom: 25px;
+    margin-top: 275px;
+    font-size: 1.5em;
+    font-family: 'gillsans', verdana;
+    color: #a3a5a5;
+}
+
+.actusTitle{
+    font-size: 1.5em;
+    font-family: 'gillsans', verdana;
+    color: #a3a5a5;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.subtitleTextActuality{
+    font-size: 1.5em;
+    font-family: 'gillsans', verdana;
+    font-weight: bold;
+}
+
+.datesPortofolio{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.datesPortofolio li{
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.datesPortofolio h4{
+    font-size: 1.2em;
+    font-family: 'gillsans', verdana;
+    color: #919799;
+}
+.activeDate{
+    padding: 4px 4px 4px 4px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    font-size: 'gillsans', verdana';
+text-transform: uppercase;
+}
+.activeDate h4{
+    color: black;
+}
+#portfolio{
+    width: 960px;
+    margin: 0 auto;
+}
+/*-- en Attendant la màj sur les balises "li" et "a" --*/
+.inlineOption{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.spacingTopProfile{
+    margin-top: 20px;
+}
+.spacingBottomProfile{
+    margin-bottom: 7%;
+}
+/*-------------------*/
+/*---- Fin profil -- */
+/*-------------------*/
+/*-----------------*/
+/*--- CSS EXPO ---*/
+/*-----------------*/
+nav a.prev {
+    left: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    outline: none;
+    text-align: left;
+    z-index: 1000;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+nav a.next {
+    right: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    outline: none;
+    text-align: left;
+    z-index: 1000;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.svg-wrap {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+.nav-circleslide a {
+    margin: 0 20px;
+}
+.nav-circleslide .icon-wrap {
+    position: relative;
+    z-index: 100;
+    display: block;
+    padding: 19px;
+}
+.nav-circleslide svg.icon {
+    fill: #fff;
+    -webkit-transition: fill 0.3s;
+    transition: fill 0.3s;
+}
+.nav-circleslide div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #566473;
+    border-radius: 50%;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.1s 0s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.1s 0s;
+}
+.nav-circleslide img {
+    display: block;
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+.nav-circleslide a.prev img {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.nav-circleslide a.next img {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.nav-circleslide a:hover div {
+    opacity: 1;
+    background-color: transparent; /* Trick to hide the visible border of image */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.1s 0.2s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.1s 0.2s;
+}
+.nav-circleslide a:hover img {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+#slides {
+    position: relative;
+}
+#slides .slides-container {
+    display: none;
+}
+#slides .scrollable {
+    zoom: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+#slides .scrollable:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.nav-circleslide {
+    margin: 0 auto;
+    position: absolute;
+    z-index: 3;
+    top: 46%;
+    width: 100%;
+}
+.nav-circleslide a.prev {
+    left: 0;
+}
+.nav-circleslide a.next {
+    right: 0;
+}
+/*-----------------*/
+/*--- FIN CSS EXPO---*/
+/*-----------------*/
+/*---------------------*/
+/*--- PAGE BOOKS ------*/
+/*---------------------*/
+/* Partie haute */
+.books{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.books h1{
+    font-family: 'DubielItalic', verdana;
+    font-size: 3.8em;
+    color: #666666;
+}
+.searchbooks{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 50px;
+}
+.searchbooks input{
+    font-family: 'DubielItalic', verdana;
+    font-size: 30px;
+    color: white;
+    background-color: #262b2d;
+    outline:0 none;
+    border: none;
+}
+.iconloupe{
+    padding-left: 0;
+}
+.deroulant button{
+    background-color: #1b2021;
+    border: 1px solid #666666;
+    border-radius: inherit;
+    color: white;
+    font-family: 'gillsans', verdana;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.deroulant .dropdown-menu{
+    background-color: #1b2021;
+    font-family: 'gillsans', verdana;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.dropdown2 button{
+    width:250px;
+    text-align: left;
+    border: inherit;
+    border-bottom: 1px solid #666666;
+    border-top: 1px solid #666666;
+    background-color: #262b2d;
+    font-size: 1.5em;
+}
+.dropdown3 button{
+    width: 250px;
+    text-align: left;
+    border: inherit;
+    border-bottom: 1px solid #666666;
+    background-color: #262b2d;
+    font-size: 1.5em;
+}
+.imagebooks{
+    display: block;
+}
+.imagebooksnohover{
+    display: none;
+}
+.imagebooks div{ /* Enlève le padding auto du Bootstrap + réduit opacité */
+    padding: 1px;
+    opacity: 0.75;
+}
+.imagebooks div:hover{
+    opacity: 1;
+}
+.white{
+    color: white;
+}
+.white:hover{
+    color: black;
+}
+/* Filtres + photos */
+.filtre p{
+    font-family: 'gillsans', verdana;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.mobilebooks{
+    display: none;
+}
+/*-----------------*/
+/* FIN page Books */
+/*-----------------*/
+/*-----------------*/
+/* PAGE WHAT IS NAE */
+/*-----------------*/
+.nae p{
+    font-family: 'gill-sans-light', verdana;
+    font-size: 1.5em;
+}
+.nae h2{
+    font-family: 'gill-sans-light', verdana;
+    font-size: 3.2em;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #666666;
+}
+.topnae{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.topnae h1{
+    font-family: 'DubielItalic', verdana;
+    font-size: 3.8em;
+    color: #666666;
+}
+.barrenae{
+    border-bottom: 1px solid grey;
+    margin-top: 125px;
+}
+/* PAGE CONTACT */
+.topcontact {
+    margin-top: 100px;
+}
+.contact p{
+    font-family: GillsansLight;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+.formcontact input{
+    background-color: #1b2021;
+    border: 1px solid #666666;
+    border-radius: 0;
+    height: 75px;
+    font-size: 1em;
+    font-family: 'gill-sans-light', verdana;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-left: 40px;
+    color: white;
+}
+.contactmessage{
+    background-color: #1b2021;
+    border: 1px solid #666666;
+    border-radius: 0;
+    font-size: 1em;
+    font-family: 'gill-sans-light', verdana;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+/*-----------------*/
+/* FIN - PAGE WHAT IS NAE */
+/*-----------------*/
+/*----------------*/
+/* PAGE ARTICLES */
+/*---------------*/
+.articles img{
+    width: 100%;
+}
+.articles p{
+    color: #666666;
+    font-family: gill-sans-light;
+    font-size: 20px;
+}
+.articles .date{
+    font-family: gill-sans-light;
+    font-size: 18px;
+    color: #666666;
+}
+.articles h3{
+    font-family: gill-sans-light;
+    font-size: 22px;
+}
+.columnarticles{
+    margin-left: -30px;
+    margin-right: 75px;
+}
+.articles-solo{
+    margin-top: 100px;
+}
+/*-------------*/
+/* Page Article */
+/*-------------*/
+.header_article{
+    color: #fff;
+    background: url(../images/article.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding-bottom: 23px;
+    padding-top: 35px;
+}
+.article_content{
+    margin-top: 75px;
+}
+.article_content h3{
+    margin-top: 25px;
+}
+.article_content h4{
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+.otherarticle{
+    margin-top: 150px;
+    border-top: 1px solid #666666;
+}
+.otherarticle h2{
+    padding-bottom: 75px;
+    padding-top: 100px;
+    font-family: gill-sans-light;
+    font-size: 22px;
+}
+.otherarticle .date{
+    font-family: gill-sans-light;
+    font-size: 18px;
+    color: #666666;
+}
+.otherarticle p{
+    color: #666666;
+    font-family: gill-sans-light;
+    font-size: 20px;
+}
+.dernieresphotos{
+    margin-left: 100px;
+}
+.dernieresphotos h2{
+    padding-bottom: 50px;
+    padding-top: 100px;
+    font-family: gill-sans-light;
+    font-size: 22px;
+}
+.dernieresphotos img{
+    padding-bottom: 25px;
+}
+/* Responsive  - @media - " à consommer avec modération :)" */
+@media screen and (max-width: 767px) /* Phone */
+{
+    h1 {
+        font-size: 2em !important;
+    }
+    .titlestyle {
+        font-size: 30px;
+    }
+    /*-----------------*/
+    /* HOMEPAGE */
+    /*-----------------*/
+    /* Menu */
+    .menu-phone{
+        position: relative;
+        width: 100%;
+        background-color: #262b2d;
+        border-right: none;
+        border-bottom: 1px solid #666666;
+        overflow: hidden;
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+        z-index: 15;
+    }
+    .menu-phone .box-nav-top{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 70px;
+        line-height: 90px;
+        color: #000;
+        padding: 0px;
+    }
+    .menu-phone .ico-nav{
+        margin-bottom: 25px;
+        margin-left: 30px;
+        height: 25px;
+    }
+    .menu-phone ul.nav-left{
+        margin-top: -13px;
+        list-style-type: none;
+    }
+    .menu-phone ul{
+        padding: 0px;
+        border-top: solid 1px rgba(255,255,255, 0.3);
+    }
+    .menu-phone ul.js{
+        padding: 0px !important;
+        margin-bottom: 15px;
+    }
+    .menu-phone ul.js li{
+        padding: 0px !important;
+        padding-bottom: 10px !important;
+    }
+    .menu-phone ul.js li .clicker{
+        padding: 0px !important;
+    }
+    .menu-phone li{
+        list-style-type: none;
+    }
+    .menu-phone li #about{
+        margin-top: -12px;
+    }
+    .menu-phone #box-nav{
+        padding-bottom: 4px;
+    }
+    .menu-phone .nav-logo{
+        left: 220px;
+    }
+    .menu-phone .ico-nav-left{
+        margin-bottom: 25px;
+        margin-left: 30px;
+        height: 15px;
+    }
+
+    .menu-phone ul li {
+        border-bottom: 1px solid #666666;
+        margin-bottom: -15px;
+    }
+    .menu-phone li a {
+        padding: 0 15px 20px 100px;
+        line-height: 90px;
+        font-size: 0.90em;
+        display: block;
+        text-align: left;
+        color: #666666;
+        font-family: 'gillsans', verdana;
+        font-weight: 300;
+        width: 260px;
+    }
+    .menu-phone li a:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+    /* logo */
+    .logo {
+        margin-left: 43%;
+    }
+    /* slider */
+    .item img {
+        margin-left: 0px;
+    }
+    .galeriedesktop{
+        display: none;
+    }
+    .galeriemobile{
+        display: block;
+        margin-left: 100px;
+    }
+    .slider h1 {
+        left: 0px;
+        bottom: 100px;
+        line-height: 50px;
+        font-size: 45px !important;
+    }
+    .slider button {
+        bottom: 90px;
+        left: 0px;
+    }
+    .slider .item{
+        height: 380px !important;
+    }
+
+    .motif {
+        margin-left: 0;
+    }
+    .carousel-indicators {
+        left: 50%;
+    }
+    /* nav horizontal*/
+    .nav-horizontal {
+        margin-left: 0px;
+    }
+    /* NAE */
+    .presnae {
+        margin-top: 50px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* parallax */
+    .parallax {
+        padding: 100px 0px 100px 20px;
+        margin-top: -70px;
+    }
+    /* news */
+    .newsarticle {
+        margin: 90px 20px 0px 15px;
+    }
+    .news h1 {
+        font-size: 2em;
+        line-height: 40px;
+    }
+    .trait-separator {
+        display: none;
+    }
+    .date-separator {
+        margin: -75px 80px 0px 80px;
+    }
+    .date-separator h4 {
+        padding: 37px 0px 37px 0px;
+    }
+    .article-news-3, .article-suite, .last-article-news {
+        margin-top: 45px;
+    }
+    .newsbutton {
+        margin-top: 100px;
+    }
+    .newsbutton button {
+        font-size: 0.8em;
+        margin-left: -15px;
+    }
+    /*artiste/oeuvredujour*/
+    .artisteandoeuvre {
+        margin-top: 20px;
+        margin-left: -15px;
+    }
+    .artisteandoeuvre .intro-artisteandoeuvre {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 16px;
+    }
+    .artiste h4, .oeuvredujour h4 {
+        font-size: 13px;
+    }
+    .artiste h2, .oeuvredujour h2 {
+        font-size: 30px;
+    }
+    .artiste p, .oeuvredujour p {
+        padding-right: 18px;
+        text-align: justify;
+    }
+    /* newsletter */
+    .newsletter {
+        margin-left: 0px;
+    }
+    .newsletter p{
+        margin-bottom: 50px;
+    }
+    /* footer */
+    .footer {
+        margin-top: 40px;
+        margin-left: 0px;
+    }
+    .nav-horizontal h4 {
+        font-size: 11px;
+    }
+    /*-----------------*/
+    /* FIN Homepage */
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE PROFILE */
+    /*-----------------*/
+    .grilleportofolio{
+        padding-left: 0;
+    }
+    /*-----------------*/
+    /* FIN PAGE PROFILE */
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE PROFILE */
+    /*------------------*/
+    .mobilebooks{
+        display: block;
+        margin-top: 50px;
+    }
+    .booksdesktop{
+        display: none;
+    }
+    .imgbooksmobile{
+        width: 100%;
+    }
+    .iconloupe{
+        float: right;
+        bottom: 100px;
+    }
+    /*---------------*/
+    /* PAGE ARTICLES */
+    /*---------------*/
+    .columnarticles{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .article1{
+        margin-top: 75px;
+    }
+    .iconloupe{
+        bottom: 110px;
+    }
+    /*--------*/
+    /* ARTICLE */
+    /*--------*/
+    .article_content h3{
+        margin-top: inherit;
+    }
+}
+@media screen and (max-width: 992px) /* Point de changement de taille menu horizontale */
+{
+    .presnae{
+        margin-top : 60px;
+    }
+    .submitrighttablet {
+        display: block;
+    }
+    .submitrightdesktop{
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 1000px) /* Tablet */
+{
+    .titlestyle {
+        font-size: 32px;
+    }
+    /*-----------------*/
+    /* HOMEPAGE */
+    /*-----------------*/
+    /* Menu */
+    .menu:hover {
+        background-color: #262b2d;
+        width: 280px;
+    }
+    .contentartiste1{
+        position: relative;
+        z-index: 2;
+        bottom: 700px;
+        font-family: Gillsans;
+        text-align: left;
+        padding-right: 15px;
+    }
+    .contentartiste{
+        position: relative;
+        z-index: 2;
+        font-family: Gillsans;
+        text-align: left;
+        padding-right: 15px;
+        margin-left: 100px;
+    }
+
+
+    /* slider */
+    .item img {
+        margin-left: 0px;
+    }
+    .slider .item{
+        height: 450px !important;
+    }
+    .galeriedesktop{
+        display: none;
+    }
+    .galeriemobile{
+        display: block;
+        margin-left: 100px;
+    }
+    .slider h1 {
+        font-size: 95px;
+        bottom: 115px;
+    }
+    .slider button {
+        bottom: 90px;
+    }
+    /* NAE home */
+    .pres-NAE-Home {
+        padding-left: 100px;
+        padding-right: 50px;
+    }
+    /* news */
+    .news {
+        margin-left: 90px;
+    }
+    .news h1 {
+        font-size: 2em;
+        line-height: 40px;
+    }
+    .newsletter {
+        margin-left: 0px;
+    }
+    .newsarticle {
+        margin: 64px 20px 0px 25px;
+    }
+    .trait-separator {
+        margin-left: 17px;
+        margin-right: 17px;
+        height: 785px;
+    }
+    .date-separator h4 {
+        width: 105px !important;
+        margin-left: -20px;
+    }
+    .newsbutton {
+        margin-top: 131px;
+        margin-left: 90px;
+    }
+    /* oeuvre/artiste du jour*/
+    .artisteandoeuvre .intro-artisteandoeuvre {
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 15px;
+    }
+    .artisteandoeuvre h1{
+        margin-top: 90px;
+    }
+    .artiste h4, .oeuvredujour h4 {
+        font-size: 15px;
+    }
+    .artiste h2, .oeuvredujour h2 {
+        font-size: 42px;
+    }
+    .artiste p, .oeuvredujour p {
+        padding-left: 20px;
+    }
+    /*newsletter*/
+    .newsletter p{
+        margin-left: 100px;margin-right: 50px;margin-bottom: 50px;
+    }
+    /* footer */
+    .footer {
+        margin-top: 90px;
+    }
+    /*-----------------*/
+    /* FIN HOMEPAGE */
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE PROFIL */
+    /*-----------------*/
+    /* image profile */
+    .img-recent{
+        height: 160px;
+        width: 100%;
+        margin-bottom: 15%;
+    }
+    /*-----------------*/
+    /* FIN PAGE PROFIL */
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE BOOKS*/
+    /*-----------------*/
+    .imagebooks{
+        display: none;
+    }
+    .imagebooksnohover{
+        display: block;
+    }
+    .imagebooksnohover div{
+        padding: 1px;
+    }
+    .dropdown2 button{
+        width: 200px;
+        text-align: left;
+        border: inherit;
+        border-bottom: 1px solid #666666;
+        border-top: 1px solid #666666;
+        background-color: #262b2d;
+        font-size: 1.3em;
+    }
+    .dropdown3 button{
+        text-align: center;
+        width: 200px;
+    }
+    .deroulant .dropdown-menu{
+        margin-left: 35%;
+    }
+    .iconloupe{
+        float: right;
+        bottom: 100px;
+    }
+    .deroulant{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    /*-----------------*/
+    /* FIN PAGE BOOKS*/
+    /*-----------------*/
+    /*---------------*/
+    /* PAGE ARTICLES */
+    /*---------------*/
+    .columnarticles{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .article1{
+        margin-top: 75px;
+    }
+    /*---------*/
+    /* ARTICLE */
+    /*---------*/
+    .article_content h3{
+        margin-top: inherit;
+    }
+}
+@media (min-width: 992px) and (max-width: 1169px) /* Desktop */
+{
+    /*-----------------*/
+    /* HOMEPAGE */
+    /*-----------------*/
+    /* Menu */
+    .menu:hover {
+        background-color: #262b2d;
+        width: 280px;
+    }
+    .contentartiste{
+        position: relative;
+        z-index: 2;
+        bottom: 300px;
+        font-family: Gillsans;
+        text-align: left;
+        padding-right: 15px;
+    }
+
+    /* slider */
+    .item img {
+        margin-left: 0px;
+    }
+    .galeriedesktop{
+        display: none;
+    }
+    .galeriemobile{
+        display: block;
+        margin-left: 100px;
+    }
+    .slider h1 {
+        font-size: 118px;
+        bottom: 160px;
+    }
+    .slider button {
+        bottom: 90px;
+    }
+    /* news */
+    .newsarticle {
+        margin: 64px 20px 0px 16px;
+    }
+    .trait-separator {
+        margin-left: 38px;
+        margin-right: 38px;
+        height: 785px;
+    }
+    .date-separator h4 {
+        width: 110px;
+    }
+    .newsbutton {
+        margin-top: 131px;
+    }
+    .artisteandoeuvre .intro-artisteandoeuvre {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    /*-----------------*/
+    /* FIN HOMEPAGE*/
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE PROFILE*/
+    /*-----------------*/
+    /* image profile */
+    .img-recent{
+        height: 130px;
+        width: 100%;
+        margin-bottom: 15%;
+    }
+    /*-----------------*/
+    /* FIN PAGE PROFILE*/
+    /*-----------------*/
+}
+@media (min-width: 1170px) /* Large desktop */
+{
+    /*-----------------*/
+    /* HOMEPAGE */
+    /*-----------------*/
+
+    /* Menu */
+    .menu:hover {
+        width: 280px;
+    }
+    /*newsletter*/
+    .newsletter p{
+        margin: 0px 260px 50px 355px;
+    }
+    /*footer */
+    .icone-social-footer{
+        padding-left: 30px !important;
+    }
+    /*-----------------*/
+    /* FIN HOMEPAGE */
+    /*-----------------*/
+    /*-----------------*/
+    /* PAGE PROFILE */
+    /*-----------------*/
+    /* image profile */
+    .img-recent{
+        height: 130px;
+        width: 100%;
+        margin-bottom: 15%;
+    }
+    /*-----------------*/
+    /* FIN PAGE PROFILE */
+    /*-----------------*/
+}
+
+@media (min-width: 1450px) /* Extra-Large desktop */
+{
+    /*slider*/
+    .slider .item{
+        height: 680px !important;
+    }
+    .trait-separator {
+        margin-left: 70px;
+    }
+    /*footer */
+    .icone-social-footer{
+        padding-left: 50px !important;
+    }
+}
+/* END Responsive */
