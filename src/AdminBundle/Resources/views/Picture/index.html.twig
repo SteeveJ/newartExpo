@@ -16,6 +16,7 @@
                 <th>Updatedat</th>
                 <th>Featuringdate</th>
                 <th>Imagename</th>
+                <th>Utilisateur</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td>{% if entity.updatedAt %}{{ entity.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if entity.featuringDate %}{{ entity.featuringDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.imageName }}</td>
+                <td>{{ entity.user }}</td>
                 <td>
                 <ul>
                     <li>

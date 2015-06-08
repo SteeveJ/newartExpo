@@ -6,7 +6,7 @@
         <div class="spacing-bottom"></div>
         <div class="row">
             <div class="col-md-4">
-
+                {{ dump(user.imageFile) }}
             </div>
             <div class="col-md-8">
                 <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>

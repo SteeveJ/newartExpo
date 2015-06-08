@@ -30,8 +30,13 @@ class ProfileController extends Controller
     public function showAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('AdminBundle:Post')->findby([],['updatedAt' => 'DESC']);
-        $pictures = $em->getRepository('AdminBundle:Picture');
+        $posts = $em->getRepository('AdminBundle:Post')->findBy([],['updatedAt' => 'DESC']);
+        $userManager = $this->container->get('security.context')->getToken()->getUser();
+        $user = $userManager->getId();
+        $pictures = $em->getRepository('AdminBundle:Picture')->findBy(['user' => $user],[]);
+        //var_dump($pictures);
+        $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+        //$path = $helper->asset($pictures, 'image');
 
         $user = $this->container->get('security.context')->getToken()->getUser();
 
