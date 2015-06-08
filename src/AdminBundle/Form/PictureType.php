@@ -18,11 +18,8 @@ class PictureType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('price')
-            ->add('path')
             ->add('exposable')
-            ->add('featuringDate')
             ->add('imageFile', 'file')
-            ->add('imageName')
             ->add('user')
         ;
     }

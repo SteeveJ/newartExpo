@@ -43,24 +43,23 @@ class DefaultController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function artisteDuJourAction($id){
-        $em = $this->getDoctrine()->getManager();
-        $artisteDuJour = $em->getRepository('AdminBundle:duJour');
-        $artiste =$artisteDuJour->findOneById(1)->getIdUser();
-        $artiste =$artisteDuJour->findOneById(1)->setIdUser($id);
-        var_dump($artiste);
+        /*$em = $this->getDoctrine()->getManager();
+        //$artisteDuJour = $em->getRepository('AdminBundle:duJour');
+
+        //$artiste =$artisteDuJour->findOneById(1)->setIdUser($id);
         if($id != null || $id != ""){
-            /*$userManager = $this->container->get('fos_user.user_manager');
+            $userManager = $this->container->get('fos_user.user_manager');
             $users = $userManager->findUsers();
 
             $artisteDuJour = new duJour();
 
             $artisteDuJour->setIdUser($id) ;
             $em->persist($artisteDuJour);
-            $em->flush();*/
+            $em->flush();
 
-            return $this->render('AdminBundle:dujour:artiste.html.twig',[
+            return $this->render('AdminBundle:dujour:artiste.html.twig'/*,[
                 'users'=>$users,
             ]);
-        }
+        }*/
     }
 }
