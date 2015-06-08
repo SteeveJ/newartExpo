@@ -31,7 +31,7 @@ class ProfileController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('AdminBundle:Post')->findby([],['updatedAt' => 'DESC']);
-
+        $pictures = $em->getRepository('AdminBundle:Picture');
 
         $user = $this->container->get('security.context')->getToken()->getUser();
 
