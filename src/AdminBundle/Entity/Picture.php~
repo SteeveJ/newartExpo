@@ -11,6 +11,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="picture")
  * @ORM\Entity
+ *
+ * @Vich\Uploadable
  */
 class Picture
 {
@@ -59,6 +61,22 @@ class Picture
      */
     private $exposable;
 
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sliderImage", type="boolean", nullable=true)
+     */
+    private $sliderImage;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ProfileImage", type="boolean", nullable=true)
+     */
+    private $changeProfileImage;
+
+
     /**
      * @var \DateTime
      *
@@ -100,7 +118,7 @@ class Picture
 
 
     /**
-     * @ORM\Column(type="string", length=255, name="image_name")
+     * @ORM\Column(type="string", length=255, name="image_name", nullable=true)
      *
      * @var string $imageName
      */
@@ -302,10 +320,6 @@ class Picture
         return $this->featuringDate;
     }
 
-
-
-    
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
@@ -346,5 +360,28 @@ class Picture
     public function getImageName()
     {
         return $this->imageName;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     * @return Picture
+     */
+    public function setUser(User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

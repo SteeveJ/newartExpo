@@ -2,10 +2,8 @@
 
 namespace AdminBundle\Controller;
 
-use AdminBundle\Entity\duJour;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\DependencyInjection\ContainerAware;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 
@@ -14,11 +12,14 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $user = $this->container->get('security.context')->getToken()->getUser();
-
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository('AdminBundle:Post')->findBy([],['updatedAt' =>'DESC']);
         return $this->render('newartBundle:Expo:index.html.twig',[
             'user' => $user,
+            'articles' => $articles,
         ]);
     }
+
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response

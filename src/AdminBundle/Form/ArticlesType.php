@@ -18,8 +18,7 @@ class ArticlesType extends AbstractType
             ->add('name')
             ->add('picture')
             ->add('description')
-            ->add('createdAt')
-            ->add('updatedAt')
+            ->add('imageFile', 'file')
         ;
     }
     

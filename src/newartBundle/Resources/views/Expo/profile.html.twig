@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 
 <div class="container col-md-11 col-md-offset-1">
@@ -74,20 +74,15 @@
         <div class="col-md-11 col-md-offset-1">
             <div id="lastwork" class="containerProfile">
                 <h5 class="profileTitleOeuvre">{{ 'dernieres oeuvres ' | upper }}</h5>
-
+{{ dump(urlImage) }}
                 <div class="row">
-                    <div class="col-md-3">
-                        <img src="" alt="" class="img-responsive img-recent"/>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" alt="" class="img-responsive img-recent"/>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" alt="" class="img-responsive img-recent"/>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" alt="" class="img-responsive img-recent"/>
-                    </div>
+                    {% if urlImage is defined %}
+                        {% for url in urlImage %}
+                            <div class="col-md-3">
+                                <img src="{{ url }}" height="100%" width="100%" class="img-responsive img-recent">
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -184,11 +179,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <div class="container">
     <div class="row">
         <div class="col-md-11 col-md-offset-1 newsbutton">

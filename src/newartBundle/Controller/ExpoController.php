@@ -11,18 +11,18 @@ class ExpoController extends Controller
 
     public function booksAction($id)
     {
-        $min = 0;
-        $max = 9;
-        if($id != null){
-            if($id > 1){
-                $max = ($max * $id);
-                $min = ($max - 9);
-                $max = $max +1;
-            }
+        if(empty($max) && empty($min) && $id == 1){
+            $max = 9;
+            $min = 0;
+        }else{
+             if($id > 1){
+                 $min = ($id*9)+1;
+                 $max = $min + 8;
+             }
         }
         $em = $this->getDoctrine()->getManager();
-        $users = $em->getRepository('AdminBundle:UserPersonalInformation')->findAll();
-
+        $users = $em->getRepository('AdminBundle:User')->findAll();
+        //var_dump($users);die;
         return $this->render('newartBundle:Expo:books.html.twig',[
             'users' => $users,
             'min' => $min,
@@ -32,20 +32,46 @@ class ExpoController extends Controller
     public function profileAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('AdminBundle:UserPersonalInformation')->findOneById($id);
+        $user = $em->getRepository('AdminBundle:User')->findOneById($id);
+        $pictures = $em->getRepository('AdminBundle:Picture')->findBy(['user' => $user],[]);
+        //var_dump($pictures);
+        $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+        $path = [];
+        $i = 0;
+        foreach($pictures as $picture){
+            // Permet d'exposer ou non une image
 
+            $container = $helper->asset($picture, 'imageFile');
+            $path[$i] = $container;
+            $i++;
+        }
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('AdminBundle:Post')->findby([],['updatedAt' => 'DESC']);
-
+        var_dump($path);
         return $this->render('newartBundle:Expo:profile.html.twig',[
             'user' => $user,
             'posts' => $posts,
+            'urlImage' => $path,
         ]);
     }
 
     public function expoAction()
     {
-        return $this->render('newartBundle:Expo:expo.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $pictures = $em->getRepository('AdminBundle:Picture')->findBy([],['updatedAt' =>'DESC']);
+        //var_dump($pictures);
+        $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+        //var_dump($pictures);
+        $i = 0;
+        foreach($pictures as $picture){
+
+            $container = $helper->asset($picture, 'imageFile');
+            $path[$i] = $container;
+            $i++;
+        }
+        return $this->render('newartBundle:Expo:expo.html.twig',[
+            'pictures' => $pictures,
+        ]);
     }
 
     public function naeAction()

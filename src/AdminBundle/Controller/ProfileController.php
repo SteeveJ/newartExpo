@@ -36,8 +36,17 @@ class ProfileController extends Controller
         $pictures = $em->getRepository('AdminBundle:Picture')->findBy(['user' => $user],[]);
         //var_dump($pictures);
         $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
-        //$path = $helper->asset($pictures, 'image');
+        $path = [];
+        $i = 0;
 
+        foreach($pictures as $picture){
+            // Permet d'exposer ou non une image
+
+            $container = $helper->asset($picture, 'imageFile');
+            $path[$i] = $container;
+            $i++;
+        }
+        //var_dump($path);die;
         $user = $this->container->get('security.context')->getToken()->getUser();
 
         if (!is_object($user) || !$user instanceof UserInterface) {
@@ -54,7 +63,7 @@ class ProfileController extends Controller
                 'isAdmin' => true,
                 'users'=>$users,
                 'pictures'=>$pictures,
-                //'urlProfile' => $path,
+                'urlProfile' => $path,
             ]);
         }
         /*$imageProf = $em->getRepository('AdminBundle:User');
@@ -66,7 +75,7 @@ class ProfileController extends Controller
         return $this->container->get('templating')->renderResponse('FOSUserBundle:Profile:show.html.'.$this->container->getParameter('fos_user.template.engine'), [
             'user' => $user,
             'posts' => $posts,
-            //'urlProfile' => $path,
+            'urlProfile' => $path,
         ]);
     }
 

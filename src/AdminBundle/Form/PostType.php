@@ -19,7 +19,13 @@ class PostType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label'=> 'Le titre de votre Article :',
+                'label'=> 'Titre :',
+            ])
+            ->add('imageFile', 'file', [
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+                'label'=> 'Votre Image :',
             ])
             ->add('text', 'textarea', [
                 'attr' => [
@@ -27,7 +33,9 @@ class PostType extends AbstractType
                 ],
                     'label'=> 'Votre Article :',
                 ]
-            );
+            )
+
+        ;
     }
     
     /**

@@ -5,10 +5,10 @@ namespace AdminBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Articles
+ * Post
  *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="AdminBundle\Entity\ArticlesRepository")
+ * @ORM\Table(name="post")
+ * @ORM\Entity
  */
 class Articles
 {
@@ -42,6 +42,7 @@ class Articles
      */
     private $description;
 
+
     /**
      * @var \DateTime
      *
@@ -55,6 +56,7 @@ class Articles
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
+
 
 
     /**

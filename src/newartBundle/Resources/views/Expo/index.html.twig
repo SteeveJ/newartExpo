@@ -260,7 +260,7 @@
             </div>
         </div>
     </div>
-    <div class="row newsarticle hidden-xs">
+    {#<div class="row newsarticle hidden-xs">
             <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
                 <p>28/10/2014</p>
                 <h2>New Art Expo et MM6  présente “ÉTÉ D'AMOUR”, avec James Friedman (Throne of Blood)</h2>
@@ -319,11 +319,36 @@
             <img src="" alt="Image News 3" class="img-responsive">
             <a href="#">Lire Plus</a>
         </div>
-    </div>
+    </div>#}
+    {# TimeLine #}
+<div class="row">
+    <section id="cd-timeline" class="col-sm-offset-1">
+        {% for article in articles|slice(0, 5) %}
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img">
+                    <img src="{{ vich_uploader_asset(article, 'imageFile')}}" height="100%" width="100%" alt="{{ article.imageName }}">
+                </div> <!-- cd-timeline-img -->
+
+                <div class="cd-timeline-content">
+                    <h2>{{ article.title }}</h2>
+                    <p class="timeline">{{ article.text|raw|truncate(200) }}</p>
+                    <a href="{{ path('post_show',  { 'id': article.id }) }}" class="cd-read-more">Read more</a>
+                    <span class="cd-date">Jan 14</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <!-- ... -->
+            </div>
+        {% endfor %}
+    </section>
+</div>
+    {# End Timeline #}
+
     <div class="container">
         <div class="row">
             <div class="col-md-11 col-md-offset-1 newsbutton">
-                <p class="text-center"><a href="href="{{ path('nae_plateform_articles') }}"><button type="button" class="btn btn-default buttonred">Lire tous les billets</button></a><p>
+                <p class="text-center"><a href="href="{{ path('nae_plateform_articles') }}"><button type="button" class="btn btn-default buttonred">Lire tous les billets</button></a></p>
             </div>
         </div>
     </div>

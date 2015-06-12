@@ -61,6 +61,22 @@ class Picture
      */
     private $exposable;
 
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sliderImage", type="boolean", nullable=true)
+     */
+    private $sliderImage;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ProfileImage", type="boolean", nullable=true)
+     */
+    private $changeProfileImage;
+
+
     /**
      * @var \DateTime
      *
@@ -367,5 +383,55 @@ class Picture
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set sliderImage
+     *
+     * @param boolean $sliderImage
+     * @return Picture
+     */
+    public function setSliderImage($sliderImage)
+    {
+        $this->sliderImage = $sliderImage;
+
+        return $this;
+    }
+
+    /**
+     * Get sliderImage
+     *
+     * @return boolean 
+     */
+    public function getSliderImage()
+    {
+        return $this->sliderImage;
+    }
+
+    /**
+     * Set changeProfileImage
+     *
+     * @param boolean $changeProfileImage
+     * @return Picture
+     */
+    public function setChangeProfileImage($changeProfileImage)
+    {
+        $this->changeProfileImage = $changeProfileImage;
+
+        return $this;
+    }
+
+    /**
+     * Get changeProfileImage
+     *
+     * @return boolean 
+     */
+    public function getChangeProfileImage()
+    {
+        return $this->changeProfileImage;
+    }
+
+    public function __toString(){
+        return $this->name;
     }
 }

@@ -6,7 +6,8 @@
         <div class="spacing-bottom"></div>
         <div class="row">
             <div class="col-md-4">
-                {{ dump(user.imageFile) }}
+                <img src="{{ vich_uploader_asset(user, 'imageFile')}}" height="100%" width="100%">
+
             </div>
             <div class="col-md-8">
                 <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
@@ -88,6 +89,13 @@
     <setion id="gallery" class="col-xs-12">
         <h2>Gallerie</h2>
         <a href=""><button class="btn btn-default">Ajouter une image</button></a>
-        <a href=""><button class="btn btn-default">Ajouter une dossier</button></a>
+        <div class="row">
+            {% for url in urlProfile %}
+                <div class="col-xs-12 col-sm-3 col-md-4">
+                    <img src="{{ url }}" height="100%" width="100%">
+                </div>
+            {% endfor %}
+        </div>
+
     </setion>
 </div>
